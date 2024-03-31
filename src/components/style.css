@@ -1,0 +1,282 @@
+.additional-text-two {
+    background-color: #ffffff; /* Adjust the background color as needed */
+    height: 500px; /* Adjust the height as needed */
+    width: 100%; /* Make it go across the entire width of the screen */
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    color: #efeded; /* Text color */
+    font-size: 1rem;
+    padding: 40px; /* Add padding to the box */
+    /* Add additional styling as needed */
+}
+
+.additional-text-one {
+    background-color: #571FE5; /* Adjust the background color as needed */
+    height: 1000px; /* Adjust the height as needed */
+    width: 100%; /* Make it go across the entire width of the screen */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    color: #efeded; /* Text color */
+    font-size: 1rem;
+    padding: 20px; /* Add padding to the box */
+    /* Add additional styling as needed */
+}
+
+.image-content img {
+    width: 100%; /* Make the image fill its container */
+    height: auto; /* Maintain the aspect ratio */
+    margin-top: 10px; /* Add margin between text and image */
+}
+
+
+.padding {
+    background-color: #ffffff; /* Adjust the background color as needed */
+    height: 40px; /* Adjust the height as needed */
+    width: 100%; /* Make it go across the entire width of the screen */
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    padding: 40px; /* Add padding to the box */
+    /* Add additional styling as needed */
+}
+
+
+.button-container-hero {
+    display: flex;
+    flex-direction: horizontal; /* Align buttons in a column */
+    align-items: flex-start; /* Align buttons to the start (left) */
+    gap: 10px; /* Adjust the gap between buttons as needed */
+    margin-left: 75px;
+  }
+
+.button-container-home {
+    display: flex;
+    flex-direction: vertical; /* Align buttons in a column */
+    align-items: flex-start; /* Align buttons to the start (left) */
+    gap: 10px; /* Adjust the gap between buttons as needed */
+    margin-left: 75px;
+}
+  
+  .styled-button-one {
+    fill: #571FE5;
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    cursor: pointer;
+    background-color: #571FE5; /* Background color for the filled button */
+    color: #fff; /* Text color for the filled button */
+    border: none; /* Remove border for the filled button */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+  }
+  
+  .styled-button-two {
+    border: 2px solid #333; /* Border style for the outlined button */
+    padding: 8px 20px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    cursor: pointer;
+    background-color: #fff; /* Background color for the outlined button */
+    color: #333; /* Text color for the outlined button */
+  }
+  
+  .styled-button:hover {
+    background-color: #333; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+  }
+  
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .hero-content {
+    width: 60%;
+  }
+  
+  .text-content {
+    margin-right: 75px; /* Adjust margin as needed for spacing between text and image */
+    padding-left: 5px;
+    padding-bottom: 100px; /* Add padding to the left side of the text */
+    padding-top: 100px;
+  }
+  
+  .button-container-home {
+    padding-top: 20px; /* Add padding at the top of the "Featured In" text */
+    /* Add any other styles as needed */
+  }
+  
+  .image-content {
+    width: 500px;
+    margin-right: 30px; /* Add 150 pixels of padding to the right side of the image */
+    margin-top: 120px; /* Move the image 50 pixels lower */
+  }
+  
+  .image-content img {
+    width: 100%; /* Make the image fill its container */
+    height: auto; /* Maintain the aspect ratio */
+  }
+  
+  /* Add styles for text in Home.jsx */
+  h1, p {
+    margin: 75px; /* Remove default margin for h1 and p tags */
+    max-width: 100%; /* Ensure text doesn't go off the screen */
+    text-align: left; /* Align the text to the left */
+  }
+  
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 8vh;
+  box-shadow: rgba(183, 183, 186, 0.23) 10px 3px 3px;
+
+  /*box-shadow: rgba(50, 50, 93, 0.23) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;*/
+}
+
+.logo {
+  font-size: 20px;
+}
+
+.logo img {
+    width: 124px; /* Adjust the width as needed */
+    height: 32px; /* Adjust the height as needed */
+}
+  
+   @media (max-width: 20px) {
+    .logo img {
+      width: 100px; /* Adjust the width as needed for mobile view */
+      height: auto; /* Adjust the height as needed for mobile view */
+    }
+    
+  } 
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  width: 75%;
+}
+
+
+.nav-links li {
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.hero {
+  text-align: center;
+  margin-top: 15%;
+}
+.hero h1 {
+  text-align: center;
+  font-size: 80px;
+}
+.mobile-menu-icon {
+  display: none;
+}
+button {
+  border: none;
+  text-decoration: none;
+  font-size: 20px;
+  background: none;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    left: 35px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-links-mobile {
+    position: absolute;
+    display: block;
+    list-style: none;
+    box-shadow: rgba(50, 50, 93, 0.23) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    left: 0;
+    top: 10%;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+    background-color: white;
+  }
+  ul li {
+    padding: 32px;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+    text-align: center;
+  }
+  .mobile-menu-icon {
+    position: absolute;
+    display: block;
+    right: 20px;
+  }
+  .hero h1 {
+    font-size: 20px;
+  }
+}
+
+.top-bar-container {
+  background-color: #571FE5; /* Adjust the background color as needed */
+  height: 40px; /* Adjust the height as needed */
+  width: 100%; /* Make it go across the entire width of the screen */
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  color: #ffffff; /* Text color */
+  font-size: 1rem;
+  /* Add additional styling as needed */
+}
+
+.bar-text {
+  margin-left: 10px;
+  font-weight: normal;
+}
+.top-bar-container {
+  background-color: #571FE5; /* Adjust the background color as needed */
+  height: 40px; /* Adjust the height as needed */
+  width: 100%; /* Make it go across the entire width of the screen */
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  color: #ffffff; /* Text color */
+  font-size: 1rem;
+  /* Add additional styling as needed */
+}
+
+.bar-text {
+  margin-left: 10px;
+  font-weight: normal;
+}
+
+.horizontal-styling {
+    display: flex;
+    flex-direction: horizontal; /* Align buttons in a column */
+    margin-left: 75px;
+}
+
+.vertical-styling {
+    display: flex;
+    flex-direction: vertical; /* Align buttons in a column */
+    margin-left: 75px;
+}
