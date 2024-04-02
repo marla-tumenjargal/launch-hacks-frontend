@@ -4,8 +4,10 @@ import {
   Map,
 } from "@vis.gl/react-google-maps"
 
+import haversine from "haversine-distance";
 import React, { useState } from 'react';
 import keys from "./keys"; //Just for development purposes, will rework for final product
+
 
 /**
  * This interface is to store the position of the marker
@@ -28,20 +30,25 @@ const mapOptions = {
  */
 export default function MapPage() {
   const [marker, setMarker] = useState<MarkerPosition>({lat : 0, lng : 0}); //initializes state for marker
-  
-  const buttonHandler = () => {
+  const yerevan : MarkerPosition = {lat : 40.1872, lng : 44.5152};
+  const metersToMilesFactor : number = 0.00061504297;
+
+  const destinationCalculator = () => {
     console.log(marker);
+    console.log(haversine(marker, yerevan) * metersToMilesFactor);
+
+
   }
 
   return (
     <>
     <div style={{ height: "50vh", width: "40%", paddingLeft : "5rem"}}>
       <APIProvider apiKey={keys.apiKey}>
-        <MapComponent markers={marker} setMarker={setMarker} />
+        <MapComponent marker={marker} setMarker={setMarker} />
       </APIProvider>
     </div>
 
-    <button onClick={buttonHandler}>Click me!</button>
+    <button onClick={destinationCalculator}>Submit!</button>
     </>
   );
 }
@@ -51,7 +58,7 @@ export default function MapPage() {
  * @param param0 - these are the marker and setMarker state variables to update marker position
  * @returns - returns functionality for Map Component
  */
-function MapComponent({ markers, setMarker }: { markers: MarkerPosition, setMarker: React.Dispatch<React.SetStateAction<MarkerPosition>> }) {
+function MapComponent({ marker, setMarker }: { marker: MarkerPosition, setMarker: React.Dispatch<React.SetStateAction<MarkerPosition>> }) {
   const setMarkerPosition = (event) => {
     const lat = event.detail.latLng.lat;
     const lng = event.detail.latLng.lng;
@@ -70,7 +77,7 @@ function MapComponent({ markers, setMarker }: { markers: MarkerPosition, setMark
       mapId={keys.mapId}
       onClick={setMarkerPosition}
     >
-      <AdvancedMarker position={{lat : markers.lat, lng : markers.lng}}></AdvancedMarker>
+      <AdvancedMarker position={{lat : marker.lat, lng : marker.lng}}></AdvancedMarker>
 
     </Map>
   );
