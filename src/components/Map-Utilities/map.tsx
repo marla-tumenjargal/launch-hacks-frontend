@@ -12,9 +12,9 @@ interface MarkerPosition {
 }
 
 const mapOptions = {
-  key: "AIzaSyD1m11KV_jPejVhkj4WbPlgTaC9ibuo9F4",
+  key: "API KEY",
   position: { lat: 43.6532, lng: -79.3832 },
-  mapId: "7192a6e2243e7ffe",
+  mapId: "MAP ID",
 }
 
 export default function Pages() {
@@ -42,7 +42,6 @@ function MapComponent({ markers, setMarkers }: { markers: MarkerPosition, setMar
       lat: lat,
       lng: lng
     };
-    // const updatedMarkers = [...markers, newMarker];
     setMarkers(newMarker);
   };
 
