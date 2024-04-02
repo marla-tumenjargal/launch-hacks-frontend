@@ -34,9 +34,9 @@ export default function MCQuestion({ question, answer, answers, handleClosePopup
           ))}
         </ul>
         <div>{isCorrect}</div>
-        <button className="styled-button-one popup-close" onClick={handleClosePopup}>
-          Close
-        </button>
+        <button className="styled-button-one popup-next" onClick={handleNextQuestion}>
+            Next
+          </button>
       </div>
     </div>
   );
