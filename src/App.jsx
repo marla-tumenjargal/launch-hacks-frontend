@@ -1,8 +1,8 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import About from './components/About';
-import Resources from './components/Resources';
-import Contact from './components/Contact';
+import Resources from './components/Leaderboard';
+import Contact from './components/TriviaPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import { TopBar } from './components';
@@ -26,7 +26,7 @@ function App() {
             <Dashboard />
           </Route>
           <Route path="/resources" exact>
-            <FRQuestion questions={exampleStuff}></FRQuestion>
+            <Resources />
           </Route>
           <Route path="/about" exact>
             <About />
