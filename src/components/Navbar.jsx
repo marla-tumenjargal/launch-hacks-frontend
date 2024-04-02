@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
-import "./css/navbar.css";
-import "./style.css";
+
 
 const Navbar = () => {
   const [Mobile, setMobile] = useState(false);
