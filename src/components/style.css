@@ -367,3 +367,86 @@ button {
   }
 }
 
+
+.navbar {
+  background-color: #ffffff;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  font-family: sans-serif; 
+  border-radius: 50px; 
+  width: 100%; 
+  max-width: calc(100% - 250px); 
+  max-height: 200px;
+  margin: 50px auto;
+  border: 1px solid rgb(230, 230, 230); 
+}
+
+.font {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+  color: black;
+}
+
+.nav-menu {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  margin-right: 15px;
+  font-size: 12px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.profile-icon {
+  font-size: 1rem;
+  color: black;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  .nav-link {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+}
+
+
+/*  CSS STYLING FOR HOVER BUTTON */
+.nav-link {
+  text-decoration: none;
+  color: black;
+  margin-right: 15px;
+  font-size: 12px;
+  font-weight: normal; 
+  transition: font-weight 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+  font-weight: 600; 
+  text-decoration: none; 
+  color: blue;
+}
+ 
