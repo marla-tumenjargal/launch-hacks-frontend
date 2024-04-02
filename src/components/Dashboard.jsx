@@ -47,12 +47,12 @@ const Dashboard = () => {
   <div className="hero-content">
     <div className="text-content">
       <h2> Trivia Questions </h2>
-      <p className="description">
+      <p className="description-1">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
         ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
         aboris nisi ut aliquip ex ea commodo consequat. 
       </p>
-      <div className="button-container-hero">
+      <div className="button-container-hero-2">
         <button onClick={handleClickRegister} className="styled-button-three" style={{ marginRight: '10px' }}>
           MCQ
         </button>

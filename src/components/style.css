@@ -40,8 +40,15 @@
 
 /* REGISTER / LOGIN */
 
+.button-container-hero-2 {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  gap: 25px;
+}
+
 .button-container-hero {
-    display: flex;
+  display: flex;
     flex-direction: horizontal; 
     align-items: flex-start; 
     gap: 25px; 
@@ -317,6 +324,7 @@ button {
   font-size: 1.25rem;
   font-weight: 600;
   color: #4f46e5;
+  margin-bottom: 2.5rem;
 }
 
 .subtitle {
@@ -326,11 +334,26 @@ button {
   color: #1f2937;
 }
 
+.subtitle-2 {
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
 .description {
   margin-top: 1.5rem;
   font-size: 1rem;
   line-height: 1.75;
   color: #4b5563;
+}
+
+.description-1 {
+  margin-top: 1.5rem;
+  margin-bottom: 4.5rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #ffffff;
 }
 
 .feature-list {
@@ -468,3 +491,4 @@ button {
   font-size: 2rem;
   margin-bottom: 20px;
 }
+
