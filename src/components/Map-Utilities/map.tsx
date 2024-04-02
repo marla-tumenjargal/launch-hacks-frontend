@@ -12,24 +12,28 @@ interface MarkerPosition {
 }
 
 const mapOptions = {
-  key: "API_KEY",
+  key: "AIzaSyD1m11KV_jPejVhkj4WbPlgTaC9ibuo9F4",
   position: { lat: 43.6532, lng: -79.3832 },
-  mapId: "MAP_ID",
+  mapId: "7192a6e2243e7ffe",
 }
 
 export default function Pages() {
-  const [markers, setMarkers] = useState<MarkerPosition[]>([]);
+  const [markers, setMarkers] = useState<MarkerPosition>({lat : 0, lng : 0});
 
   return (
-    <div style={{ height: "100vh", width: "100%" }}>
+    <>
+    <div style={{ height: "50vh", width: "40%", paddingLeft : "5rem"}}>
       <APIProvider apiKey={mapOptions.key}>
         <MapComponent markers={markers} setMarkers={setMarkers} />
       </APIProvider>
     </div>
+    
+    <button>hello</button>
+    </>
   );
 }
 
-function MapComponent({ markers, setMarkers }: { markers: MarkerPosition[], setMarkers: React.Dispatch<React.SetStateAction<MarkerPosition[]>> }) {
+function MapComponent({ markers, setMarkers }: { markers: MarkerPosition, setMarkers: React.Dispatch<React.SetStateAction<MarkerPosition>> }) {
   const getBounds = (event) => {
     const lat = event.detail.latLng.lat;
     const lng = event.detail.latLng.lng;
@@ -38,8 +42,8 @@ function MapComponent({ markers, setMarkers }: { markers: MarkerPosition[], setM
       lat: lat,
       lng: lng
     };
-    const updatedMarkers = [...markers, newMarker];
-    setMarkers(updatedMarkers);
+    // const updatedMarkers = [...markers, newMarker];
+    setMarkers(newMarker);
   };
 
   return (
@@ -49,11 +53,9 @@ function MapComponent({ markers, setMarkers }: { markers: MarkerPosition[], setM
       mapId={mapOptions.mapId}
       onClick={getBounds}
     >
-      <AdvancedMarker position={{ lat: 50, lng: 50 }}></AdvancedMarker>
+      <AdvancedMarker position={{lat : markers.lat, lng : markers.lng}}></AdvancedMarker>
 
-      {markers.map((marker, idx) => (
-        <AdvancedMarker key={idx} position={marker}></AdvancedMarker>
-      ))}
+      
     </Map>
   );
 }
