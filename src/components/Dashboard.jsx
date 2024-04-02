@@ -1,7 +1,6 @@
 import React from "react";
 import './style.css';
 
-import "./css/Navbar.css"
 import {BottomHeroOne} from "../assets" 
 
 const Dashboard = () => {
