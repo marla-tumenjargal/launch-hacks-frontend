@@ -15,59 +15,58 @@ const Dashboard = () => {
   
   return (
     <div>
-    <div className="hero-container">
-      <div className="hero-content">
-        <div className="text-content">
-          <h1> Website Title </h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta illum tempora,
-            quo explicabo aperiam natus dolorum aliquid debitis eos ratione officiis vel,
-            quidem tempore quam ea perferendis autem hic voluptatibus eligendi.
-          </p>
+      <div className="hero-container">
+  <div className="hero-content">
+    <div className="text-content">
+      <h1 className="subtitle" style={{ marginBottom: '30px' }}> Website Title </h1>
+      <p className="description" style={{ marginBottom: '50px' }}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta illum tempora,
+        quo explicabo aperiam natus dolorum aliquid debitis eos ratione officiis vel,
+        quidem tempore quam ea perferendis autem hic voluptatibus eligendi.
+      </p>
 
-          <div className="button-container-hero">
-            <button onClick={handleClickRegister} className="styled-button-one">
-              Register
-            </button>
-            <button onClick={handleClickLogIn} className="styled-button-two">
-              Log In
-            </button>
-          </div>
-        </div>
-      </div>
-      <div className="image-content">
-        <img src={BottomHeroOne} alt="Hero-image" />
+      <div className="button-container-hero">
+        <button onClick={handleClickRegister} className="styled-button-one" style={{ marginRight: '10px' }}>
+          Register
+        </button>
+        <button onClick={handleClickLogIn} className="styled-button-two">
+          Log In
+        </button>
       </div>
     </div>
+  </div>
+  <div className="image-content">
+    <img src={BottomHeroOne} alt="Hero-image" />
+  </div>
+</div>
+
   
       <div className="padding"/>
 
-    <div className="additional-text-one hero-container">
-      <div className="hero-content">
-        <div className="text-content">
-          <h2> Secondary Text </h2> 
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-            aboris nisi ut aliquip ex ea commodo consequat. 
-          </p>
-          <div className="button-container-hero">
-            <button onClick={handleClickRegister} className="styled-button-three">
-              MCQ
-            </button>
-
-            <button onClick={handleClickLogIn} className="styled-button-three">
-              Free Response
-            </button>
-
-            <button onClick={handleClickLogIn} className="styled-button-three">
-              Map Pin Point
-            </button>
-          </div>
-          </div>
-        
+      <div className="additional-text-one hero-container">
+  <div className="hero-content">
+    <div className="text-content" style={{ marginBottom: '20px', padding: '20px' }}>
+      <h2 style={{ fontSize: '2rem', marginBottom: '20px' }}>Secondary Text</h2>
+      <p className="description" style={{ marginBottom: '20px' }}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+        aboris nisi ut aliquip ex ea commodo consequat. 
+      </p>
+      <div className="button-container-hero">
+        <button onClick={handleClickRegister} className="styled-button-three" style={{ marginRight: '10px' }}>
+          MCQ
+        </button>
+        <button onClick={handleClickLogIn} className="styled-button-three" style={{ marginRight: '10px' }}>
+          Free Response
+        </button>
+        <button onClick={handleClickLogIn} className="styled-button-three">
+          Map Pin Point
+        </button>
+      </div>
     </div>
   </div>
+</div>
+
 
       <CenteredProductFeature />
 

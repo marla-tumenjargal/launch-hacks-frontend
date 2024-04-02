@@ -45,7 +45,6 @@
     flex-direction: horizontal; 
     align-items: flex-start; 
     gap: 25px; 
-    margin-left: 65px;
 }
 
   .styled-button-one {
@@ -91,17 +90,19 @@
   }
   
 
-.hero-container {
+  .hero-container {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin-bottom: 50px;
   }
   
   .hero-content {
     width: 60%;
   }
   
+
   .text-content {
     margin-right: 150px; /* Adjust margin as needed for spacing between text and image */
     padding-left: 5px;
@@ -320,7 +321,7 @@ button {
 
 .subtitle {
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: #1f2937;
 }

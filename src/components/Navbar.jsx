@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 
-
 const Navbar = () => {
   const [Mobile, setMobile] = useState(false);
   const location = useLocation();
@@ -21,7 +20,7 @@ const Navbar = () => {
           <NavLink to="/resources" label="Resources" />
           <NavLink to="/contact" label="Contact" />
           <NavLink to="/about" label="About" />
-          <NavLink to="/maps" label="MAPS" />
+          <NavLink to="/maps" label="Maps" />
         </ul>
         <button
           className="mobile-menu-icon"
