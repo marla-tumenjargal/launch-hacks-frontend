@@ -1,13 +1,13 @@
 .mcq {
-    background-color: #606C38; 
+    background-color: #571FE5; 
     color: #FEFAE0;
     display: grid;
 }
 
 .mcq-answer-option {
     height: 50px;
-    cursor: pointer;
     margin: 3px;
+    border-radius: 10px;
 }
 
 
@@ -15,7 +15,7 @@
     border: 3px red solid;
 }
 .correct {
-    border: 3px green solid;
+    border: 3px     rgb(29, 206, 29) solid;
 }
 
 .mcq-answer-container {
@@ -27,8 +27,13 @@
     transition: border 0.5s;
     -webkit-transition: border 0.5s;
     border: 3px #FEFAE0 solid;
+    cursor: pointer;
 }
     
 .hidden:hover {
     border: 3px white solid;
+}
+
+.mcq-submit {
+    color: white;
 }
