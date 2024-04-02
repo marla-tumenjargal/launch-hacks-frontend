@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import Resources from './components/Resources';
-import Contact from './components/Contact';
+import Contact from './components/TriviaPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import { TopBar } from './components';
@@ -23,7 +23,7 @@ function App() {
             <Dashboard />
           </Route>
           <Route path="/resources" exact>
-            <MCQuestion question="How many cops does it take to change a light bulb?" answer="None. They'll just beat the room for being black." answers={exampleAnswers}/>
+            <Resources />
           </Route>
           <Route path="/about" exact>
             <About />

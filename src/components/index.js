@@ -1,5 +1,5 @@
 import About from "./About";
-import Contact from "./Contact";
+import Contact from "./TriviaPage";
 import Navbar from "./Navbar";
 import Resources from "./Resources";
 import Dashboard from "./Dashboard";
