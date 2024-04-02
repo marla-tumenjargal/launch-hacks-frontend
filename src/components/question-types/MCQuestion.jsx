@@ -1,51 +1,67 @@
 import { useEffect, useState } from "react";
-import "../css/MCQuestion.css"
-
-export default function MCQuestion(props) {
-    function changeAnswer(answer) {
-        if(selectedAnswer == "") {
-            setSelectedAnswer(answer);
-            setHidden("");
-        }
-        return;
+import "../css/MCQuestion.css";
+export default function MCQuestion() {
+  const [selectedAnswer, setSelectedAnswer] = useState("");
+  const [hidden, setHidden] = useState("hidden");
+  const [isCorrect, setIsCorrect] = useState("");
+  const [question, setQuestion] = useState();
+  useEffect(() => {
+    async function getMCQuestion() {
+      const response = await fetch("http://localhost:8080/v1/trivia/mcq/hi");
+      const data = await response.json();
+      setQuestion(data);
     }
-    const [selectedAnswer, setSelectedAnswer] = useState("");
-    const [hidden, setHidden] = useState("hidden");
-    const [isCorrect, setIsCorrect] = useState("");
-    
-    useEffect(() => {
-        if(selectedAnswer == props.answer) {
-            console.log("hehehaha")
-            setIsCorrect("Correct!")
-        }
-        else if (selectedAnswer == "") {
-            return;
-        }
-        else{
-            console.log(":(")
-            setIsCorrect("Incorrect")
+    getMCQuestion();
+  }, []);
+  useEffect(() => {
+    if (!question) {
+      return;
+    }
+    if (selectedAnswer == question.correct) {
+      setIsCorrect("Correct!");
+    } else if (selectedAnswer == "") {
+      return;
+    } else {
+      setIsCorrect("Incorrect");
+    }
+  }, [selectedAnswer]);
 
-        }
-    }, [selectedAnswer])
+  function changeAnswer(answer) {
+    if (selectedAnswer == "") {
+      setSelectedAnswer(answer);
+      setHidden("");
+    }
+    return;
+  }
+
   return (
-    <div className="mcq">
-      <h2>{props.question}</h2>
-      <div className="mcq-answer-container">
-        {props.answers.map((data) => {
-            let correct = data == props.answer ? "correct" : "incorrect";
-          return (
-            <div key={data} onClick={() => changeAnswer(data)} className={"mcq-answer-option " + correct + " " + hidden}>
-                {data}
-            </div>
-          );
-        })}
-      </div>
-      <div>
-        {isCorrect}
-      </div>
-      <button>
-        Next
-      </button>
-    </div>
+    <>
+      {question && (
+        <div className="mcq">
+          <h2>{question.question}</h2>
+          <div className="mcq-answer-container">
+            {question.answer.map((data) => {
+              let correct = data == question.correct ? "correct" : "incorrect";
+              return (
+                <div
+                  key={data}
+                  onClick={() => changeAnswer(data)}
+                  className={"mcq-answer-option " + correct + " " + hidden}
+                >
+                  {data}
+                </div>
+              );
+            })}
+          </div>
+          <div>{isCorrect}</div>
+          <button
+            className="mcq-submit"
+            onClick={() => window.location.reload()}
+          >
+            Next
+          </button>
+        </div>
+      )}
+    </>
   );
 }
