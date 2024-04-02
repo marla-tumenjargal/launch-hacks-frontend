@@ -20,6 +20,7 @@ const Navbar = () => {
           <NavLink to="/resources" label="Resources" />
           <NavLink to="/contact" label="Contact" />
           <NavLink to="/about" label="About" />
+          <NavLink to="/maps" label="MAPS" />
         </ul>
         <button
           className="mobile-menu-icon"

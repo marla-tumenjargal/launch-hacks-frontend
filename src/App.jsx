@@ -5,7 +5,8 @@ import Resources from './components/Resources';
 import Contact from './components/Contact';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
-import MCQuestion from './components/question-types/MCQuestion';
+import { TopBar } from './components';
+import Pages from './components/Map-Utilities/map';
 
 const exampleAnswers = ["None. They'll just beat the room for being black.", "about 25 I dont really know lel", "An infinite amount, they're all too short", "1 you stupid idiot"]
 function App() {
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path="/contact" exact>
             <Contact />
+          </Route>
+          <Route path="/maps" exact>
+            <Pages />
           </Route>
         </Switch>
       </Router>
