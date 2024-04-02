@@ -29,7 +29,7 @@ function App() {
             <Resources />
           </Route>
           <Route path="/about" exact>
-            <About />
+            <FRQuestion questions={exampleStuff} />
           </Route>
           <Route path="/contact" exact>
             <Contact />
