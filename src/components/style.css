@@ -450,4 +450,21 @@ button {
   text-decoration: none; 
   color: blue;
 }
- 
+
+.subtitle {
+  margin-bottom: 30px;
+}
+
+.description {
+  margin-bottom: 50px;
+}
+
+.text-content {
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.additional-text-one h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}

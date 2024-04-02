@@ -45,9 +45,9 @@ const Dashboard = () => {
 
       <div className="additional-text-one hero-container">
   <div className="hero-content">
-    <div className="text-content" style={{ marginBottom: '20px', padding: '20px' }}>
-      <h2 style={{ fontSize: '2rem', marginBottom: '20px' }}>Secondary Text</h2>
-      <p className="description" style={{ marginBottom: '20px' }}>
+    <div className="text-content">
+      <h2> Trivia Questions </h2>
+      <p className="description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
         ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
         aboris nisi ut aliquip ex ea commodo consequat. 
