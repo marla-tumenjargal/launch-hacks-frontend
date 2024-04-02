@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+
 import { Link, useLocation } from "react-router-dom";
-import "./Navbar.css";
+
+
+import { Link, useLocation, useHistory } from "react-router-dom";
 
 const Navbar = () => {
   const [Mobile, setMobile] = useState(false);
@@ -19,6 +22,7 @@ const Navbar = () => {
           <NavLink to="/resources" label="Resources" />
           <NavLink to="/contact" label="Contact" />
           <NavLink to="/about" label="About" />
+          <NavLink to="/maps" label="MAPS" />
         </ul>
         <button
           className="mobile-menu-icon"

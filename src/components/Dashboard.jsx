@@ -1,10 +1,7 @@
 import React from "react";
 import './style.css';
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid';
-import ProductFeature from "./ProductFeature"; 
-import CenteredProductFeature from "./CenteredProductFeature";
 
-
+import "./css/Navbar.css"
 import {BottomHeroOne} from "../assets" 
 
 const Dashboard = () => {
