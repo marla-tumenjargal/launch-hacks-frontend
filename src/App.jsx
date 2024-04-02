@@ -8,8 +8,11 @@ import Dashboard from './components/Dashboard';
 import { TopBar } from './components';
 import Pages from './components/Map-Utilities/map';
 import MCQuestion from './components/question-types/MCQuestion';
+import FRQuestion from './components/question-types/FRQuestion';
 
-const exampleAnswers = ["None. They'll just beat the room for being black.", "about 25 I dont really know lel", "An infinite amount, they're all too short", "1 you stupid idiot"]
+const exampleStuff = [
+  {question: "why do i love cats?", answer: "purring", solved: false}, {question: "lololol", answer: "thats pretty funny", solved: false}
+]
 function App() {
   return (
     <>
@@ -23,7 +26,7 @@ function App() {
             <Dashboard />
           </Route>
           <Route path="/resources" exact>
-            <MCQuestion question="How many cops does it take to change a light bulb?" answer="None. They'll just beat the room for being black." answers={exampleAnswers}/>
+            <FRQuestion questions={exampleStuff}></FRQuestion>
           </Route>
           <Route path="/about" exact>
             <About />
