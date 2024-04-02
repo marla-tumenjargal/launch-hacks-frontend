@@ -14,10 +14,12 @@ export default function MCQuestion(props) {
     const [isCorrect, setIsCorrect] = useState("");
     
     useEffect(() => {
-        console.log("hello")
         if(selectedAnswer == props.answer) {
             console.log("hehehaha")
-            setIsCorrect("Correct")
+            setIsCorrect("Correct!")
+        }
+        else if (selectedAnswer == "") {
+            return;
         }
         else{
             console.log(":(")

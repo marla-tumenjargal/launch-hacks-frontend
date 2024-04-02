@@ -1,8 +1,8 @@
 import React from "react";
 import './style.css';
 
-import "./css/Navbar.css"
 import {BottomHeroOne} from "../assets" 
+import CenteredProductFeature from "./CenteredProductFeature";
 
 const Dashboard = () => {
   const handleClickRegister = () => {
