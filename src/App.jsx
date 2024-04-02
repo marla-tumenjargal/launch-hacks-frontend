@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import About from './components/About';
-import Resources from './components/Resources';
+import Resources from './components/Leaderboard';
 import Contact from './components/TriviaPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Dashboard from './components/Dashboard';

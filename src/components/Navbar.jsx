@@ -18,7 +18,7 @@ const Navbar = () => {
         <ul className={Mobile ? "nav-links-mobile" : "nav-links"} onClick={closeMobileMenu}>
           <NavLink to="/" label="Dashboard" />
           <NavLink to="/resources" label="Resources" />
-          <NavLink to="/contact" label="Contact" />
+          <NavLink to="/contact" label="Trivia" />
           <NavLink to="/about" label="About" />
           <NavLink to="/maps" label="Maps" />
         </ul>
