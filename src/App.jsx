@@ -11,13 +11,13 @@ import MCQuestion from './components/question-types/MCQuestion';
 import FRQuestion from './components/question-types/FRQuestion';
 
 const exampleStuff = [
-  {question: "why do i love cats?", answer: "purring", solved: false}, {question: "lololol", answer: "thats pretty funny", solved: false}
+  { question: "why do i love cats?", answer: "purring", solved: false }, { question: "lololol", answer: "thats pretty funny", solved: false }
 ]
 function App() {
   return (
     <>
 
-    <Router>
+      <Router>
         <TopBar />
 
         <Navbar />
@@ -29,7 +29,7 @@ function App() {
             <Resources />
           </Route>
           <Route path="/about" exact>
-            <About />
+            <FRQuestion questions={exampleStuff} />
           </Route>
           <Route path="/contact" exact>
             <Contact />
