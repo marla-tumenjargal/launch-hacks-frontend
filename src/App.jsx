@@ -6,6 +6,7 @@ import Contact from './components/Contact';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import { TopBar } from './components';
+import Pages from './components/Map-Utilities/map';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path="/contact" exact>
             <Contact />
+          </Route>
+          <Route path="/maps" exact>
+            <Pages />
           </Route>
         </Switch>
       </Router>
