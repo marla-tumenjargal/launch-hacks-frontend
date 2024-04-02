@@ -5,6 +5,7 @@ import {
 } from "@vis.gl/react-google-maps"
 
 import haversine from "haversine-distance";
+import { Connector } from "./Connector";
 import React, { useState } from 'react';
 import keys from "./keys"; //Just for development purposes, will rework for final product
 
@@ -30,25 +31,44 @@ const mapOptions = {
  */
 export default function MapPage() {
   const [marker, setMarker] = useState<MarkerPosition>({lat : 0, lng : 0}); //initializes state for marker
-  const yerevan : MarkerPosition = {lat : 40.1872, lng : 44.5152};
+  const [correctMarker, setCorrectMarker] = useState<MarkerPosition>({lat : 0, lng : 0});
   const metersToMilesFactor : number = 0.00061504297;
+  const [question,setQuestion] = useState<string>("");
 
-  const destinationCalculator = () => {
-    console.log(marker);
-    console.log(haversine(marker, yerevan) * metersToMilesFactor);
+  const getResult = () => {
+    const distance : number = haversine(marker, correctMarker) * metersToMilesFactor;
+    console.log("Distance in miles: " + distance);
 
+    if (distance <= 100) {
+      console.log("WITHIN 100 miles");
+    } else {
+      console.log("Womp womp");
+    }
+  }
 
+  const getQuestion = async () => {
+    let connector : Connector = new Connector();
+
+    const response = connector.getQuestion();
+    const data = await response;
+
+    const coords = await connector.getCoordinates(data.correct);
+    setCorrectMarker({lat : coords.lat, lng : coords.lng});
+    console.log("DONE");
   }
 
   return (
     <>
     <div style={{ height: "50vh", width: "40%", paddingLeft : "5rem"}}>
       <APIProvider apiKey={keys.apiKey}>
-        <MapComponent marker={marker} setMarker={setMarker} />
+        <MapComponent marker={marker} setMarker={setMarker} correctMarker={correctMarker}/>
       </APIProvider>
     </div>
 
-    <button onClick={destinationCalculator}>Submit!</button>
+    <button onClick={getResult}>Submit!</button>
+
+    <button onClick={getQuestion}>Get A Question</button>
+    {question}
     </>
   );
 }
@@ -58,7 +78,7 @@ export default function MapPage() {
  * @param param0 - these are the marker and setMarker state variables to update marker position
  * @returns - returns functionality for Map Component
  */
-function MapComponent({ marker, setMarker }: { marker: MarkerPosition, setMarker: React.Dispatch<React.SetStateAction<MarkerPosition>> }) {
+function MapComponent({ marker, setMarker, correctMarker}: { marker: MarkerPosition, setMarker: React.Dispatch<React.SetStateAction<MarkerPosition>>, correctMarker : MarkerPosition}) {
   const setMarkerPosition = (event) => {
     const lat = event.detail.latLng.lat;
     const lng = event.detail.latLng.lng;
@@ -76,8 +96,10 @@ function MapComponent({ marker, setMarker }: { marker: MarkerPosition, setMarker
       defaultCenter={mapOptions.position}
       mapId={keys.mapId}
       onClick={setMarkerPosition}
+      disableDefaultUI={true}
     >
       <AdvancedMarker position={{lat : marker.lat, lng : marker.lng}}></AdvancedMarker>
+      <AdvancedMarker position={{lat : correctMarker.lat, lng : correctMarker.lng}}></AdvancedMarker>
 
     </Map>
   );
