@@ -12,16 +12,20 @@
 }
 
 .additional-text-one {
-    background-color: #571FE5; /* Adjust the background color as needed */
-    height: 1000px; /* Adjust the height as needed */
-    width: 100%; /* Make it go across the entire width of the screen */
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-    color: #efeded; /* Text color */
-    font-size: 1rem;
-    padding: 20px; /* Add padding to the box */
-    /* Add additional styling as needed */
+  background-color: #571FE5; /* Adjust the background color as needed */
+  height: 500px; /* Adjust the height as needed */
+  width: 100%; /* Make it go across the entire width of the screen */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  color: #efeded; /* Text color */
+  font-size: 1rem;
+  padding: 10px; /* Reduce padding to decrease space around the content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
+
 
 .image-content img {
     width: 100%; /* Make the image fill its container */
@@ -29,53 +33,56 @@
     margin-top: 10px; /* Add margin between text and image */
 }
 
-
 .padding {
-    background-color: #ffffff; /* Adjust the background color as needed */
-    height: 40px; /* Adjust the height as needed */
-    width: 100%; /* Make it go across the entire width of the screen */
-    display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-    padding: 40px; /* Add padding to the box */
-    /* Add additional styling as needed */
+  padding: 30px; 
+  
 }
 
+/* REGISTER / LOGIN */
 
 .button-container-hero {
     display: flex;
-    flex-direction: horizontal; /* Align buttons in a column */
-    align-items: flex-start; /* Align buttons to the start (left) */
-    gap: 10px; /* Adjust the gap between buttons as needed */
-    margin-left: 75px;
-  }
-
-.button-container-home {
-    display: flex;
-    flex-direction: vertical; /* Align buttons in a column */
-    align-items: flex-start; /* Align buttons to the start (left) */
-    gap: 10px; /* Adjust the gap between buttons as needed */
-    margin-left: 75px;
+    flex-direction: horizontal; 
+    align-items: flex-start; 
+    gap: 25px; 
+    margin-left: 65px;
 }
-  
+
   .styled-button-one {
     fill: #571FE5;
-    padding: 10px 20px; /* Adjust padding as needed */
-    font-size: 16px; /* Adjust font size as needed */
-    cursor: pointer;
-    background-color: #571FE5; /* Background color for the filled button */
-    color: #fff; /* Text color for the filled button */
-    border: none; /* Remove border for the filled button */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    padding: 20px 40px; 
+    font-size: 16px; 
+    font-weight: 500;
+    background-color: #571FE5; 
+    color: #fff; 
+    border: none; 
+    border-radius: 50px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0 0 10px #cdb9ff;
   }
   
   .styled-button-two {
-    border: 2px solid #333; /* Border style for the outlined button */
-    padding: 8px 20px; /* Adjust padding as needed */
-    font-size: 16px; /* Adjust font size as needed */
+    border: 2px solid #333; 
+    padding: 18px 40px; 
+    font-size: 16px; 
+    font-weight: 500;
     cursor: pointer;
-    background-color: #fff; /* Background color for the outlined button */
-    color: #333; /* Text color for the outlined button */
+    background-color: #fff; 
+    color: #333; 
+
+    border-radius: 50px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0 0 10px rgba(102, 102, 102, 0.3);
+  }
+
+  .styled-button-three {
+    fill: #571FE5;
+    padding: 20px 40px; 
+    font-size: 16px; 
+    font-weight: 500;
+    background-color: #ffffff; 
+    color: #000000; 
+    border: none; 
+    border-radius: 50px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0 0 10px #280583;
   }
   
   .styled-button:hover {
@@ -96,7 +103,7 @@
   }
   
   .text-content {
-    margin-right: 75px; /* Adjust margin as needed for spacing between text and image */
+    margin-right: 150px; /* Adjust margin as needed for spacing between text and image */
     padding-left: 5px;
     padding-bottom: 100px; /* Add padding to the left side of the text */
     padding-top: 100px;
@@ -238,30 +245,19 @@ button {
 
 .top-bar-container {
   background-color: #571FE5; /* Adjust the background color as needed */
-  height: 40px; /* Adjust the height as needed */
+  height: 75px; /* Adjust the height as needed */
   width: 100%; /* Make it go across the entire width of the screen */
   display: flex;
   justify-content: center; /* Center the content horizontally */
   align-items: center; /* Center the content vertically */
   color: #ffffff; /* Text color */
   font-size: 1rem;
-  /* Add additional styling as needed */
+  font-style: italic;
 }
 
 .bar-text {
   margin-left: 10px;
   font-weight: normal;
-}
-.top-bar-container {
-  background-color: #571FE5; /* Adjust the background color as needed */
-  height: 40px; /* Adjust the height as needed */
-  width: 100%; /* Make it go across the entire width of the screen */
-  display: flex;
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
-  color: #ffffff; /* Text color */
-  font-size: 1rem;
-  /* Add additional styling as needed */
 }
 
 .bar-text {
@@ -279,4 +275,155 @@ button {
     display: flex;
     flex-direction: vertical; /* Align buttons in a column */
     margin-left: 75px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.feature-section {
+  overflow: hidden;
+  background-color: #fff;
+  padding: 6rem 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 75rem;
+  padding: 0 1.5rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #4f46e5;
+}
+
+.subtitle {
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.description {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #4b5563;
+}
+
+.feature-list {
+  margin-top: 2.5rem;
+  list-style: none;
+}
+
+.feature-item {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.feature-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #4f46e5;
+}
+
+/* Screenshot styles */
+.screenshot {
+  width: 48rem;
+  max-width: none;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 640px) {
+  .screenshot {
+    width: 45rem;
+    margin-left: -1rem;
+  }
+}
+
+/* STYLING FOR ABOUT PAGE */
+
+.about-section {
+  background-color: #fff; /* Set background color to white */
+  padding: 0rem 0; /* Add top and bottom padding */
+}
+
+/* Container styles */
+.container {
+  margin: 0 auto; /* Center the container horizontally */
+  max-width: 75rem; /* Set a maximum width for the container */
+}
+
+/* Stat item styles */
+.stat-item {
+  border: 1px solid #ddd; /* Add a solid border with light gray color */
+  border-radius: 4px; /* Add rounded corners */
+  padding: 5rem; /* Add padding inside each stat item */
+  margin-bottom: 2rem; /* Add some space between stat items */
+  display: flex; /* Set the stat item to display as a flexbox */
+  flex-direction: row; /* Arrange elements vertically within the stat item */
+  align-items: center; /* Center elements horizontally within the stat item */
+}
+
+/* Stat name styles */
+.stat-name {
+  font-size: 1rem; /* Set font size for stat name */
+  line-height: 1.5; /* Adjust line height for better readability */
+  color: #666; /* Set text color to a muted gray tone */
+  margin-bottom: 1rem; /* Add some space below the stat name */
+}
+
+/* Stat value styles */
+.stat-value {
+  font-size: 2rem; /* Set font size for stat value */
+  font-weight: bold; /* Make the stat value bold */
+  color: #333; /* Set text color to a darker gray tone */
+  text-align: center; /* Center the text within the stat item */
+}
+
+/* Responsive styling for larger screens (lg prefix) */
+@media (min-width: 768px) {
+  .about-section {
+    padding: 4rem 0; /* Increase padding on larger screens */
+  }
+
+  .container {
+    max-width: 960px; /* Adjust max-width for wider screens */
+  }
+
+  /* Adjust grid layout for stat items on larger screens */
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* Set three columns for stat items */
+    gap: 3rem; /* Add spacing between stat items on larger screens */
+  }
+
+  .stat-item {
+    margin-bottom: 0; /* Remove bottom margin on larger screens for grid layout */
+  }
 }

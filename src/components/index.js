@@ -3,7 +3,9 @@ import Contact from "./Contact";
 import Navbar from "./Navbar";
 import Resources from "./Resources";
 import Dashboard from "./Dashboard";
+import ProductFeature from "./Dashboard";
 import TopBar from "./TopBar";
+import CenteredProductFeature from "./CenteredProductFeature";
 
 export {
     About,
@@ -11,5 +13,7 @@ export {
     Dashboard,
     Navbar,
     Resources,
-    TopBar
+    TopBar,
+    ProductFeature,
+    CenteredProductFeature
 }

@@ -1,5 +1,9 @@
 import React from "react";
 import './style.css';
+import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid';
+import ProductFeature from "./ProductFeature"; 
+import CenteredProductFeature from "./CenteredProductFeature";
+
 
 import {BottomHeroOne} from "../assets" 
 
@@ -11,51 +15,64 @@ const Dashboard = () => {
   const handleClickLogIn = () => {
     return console.log("Log in Clicked");
   };
-
+  
   return (
     <div>
-      <div className="hero-container">
-        <div className="hero-content">
-          <div className="text-content">
-            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur 
-              adipisicing elit. Dicta illum tempora, 
-              quo explicabo aperiam natus dolorum 
-              aliquid debitis eos ratione officiis vel, 
-              quidem tempore quam ea perferendis autem 
-              hic voluptatibus eligendi. 
-            </p>
+    <div className="hero-container">
+      <div className="hero-content">
+        <div className="text-content">
+          <h1> Website Title </h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta illum tempora,
+            quo explicabo aperiam natus dolorum aliquid debitis eos ratione officiis vel,
+            quidem tempore quam ea perferendis autem hic voluptatibus eligendi.
+          </p>
 
-            <div className="button-container-hero">
-              <button
-                onClick={handleClickRegister}
-                className="styled-button-one"
-              >
-                Register
-              </button>
-              <button onClick={handleClickLogIn} className="styled-button-two">
-                Log In
-              </button>
-            </div>
+          <div className="button-container-hero">
+            <button onClick={handleClickRegister} className="styled-button-one">
+              Register
+            </button>
+            <button onClick={handleClickLogIn} className="styled-button-two">
+              Log In
+            </button>
           </div>
         </div>
-        <div className="image-content">
-          <img src={BottomHeroOne} alt="Hero-image" />
-        </div>
       </div>
-
-      <div className="padding" />
-
-      <div className="additional-text-one">
-        <h1>Landing Page</h1>
-        <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-        </p>
-        <div className="image-content">
-          <img src={BottomHeroOne} alt="Hero-image" />
-        </div>
+      <div className="image-content">
+        <img src={BottomHeroOne} alt="Hero-image" />
       </div>
+    </div>
+  
+      <div className="padding"/>
+
+    <div className="additional-text-one hero-container">
+      <div className="hero-content">
+        <div className="text-content">
+          <h2> Secondary Text </h2> 
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+            aboris nisi ut aliquip ex ea commodo consequat. 
+          </p>
+          <div className="button-container-hero">
+            <button onClick={handleClickRegister} className="styled-button-three">
+              MCQ
+            </button>
+
+            <button onClick={handleClickLogIn} className="styled-button-three">
+              Free Response
+            </button>
+
+            <button onClick={handleClickLogIn} className="styled-button-three">
+              Map Pin Point
+            </button>
+          </div>
+          </div>
+        
+    </div>
+  </div>
+
+      <CenteredProductFeature />
 
       {/*First Landing */}
       <div className="hero-container">

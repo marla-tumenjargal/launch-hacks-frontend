@@ -10,7 +10,7 @@ import { TopBar } from './components';
 function App() {
   return (
     <>
-      <Router>
+    <Router>
         <TopBar />
         <Navbar />
         <Switch>
@@ -33,5 +33,3 @@ function App() {
 }
 
 export default App;
-
-App.js

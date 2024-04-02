@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { Link, useLocation, useHistory } from "react-router-dom";
-import "./css/navbar.css";
-import "./style.css";
+import { Link, useLocation } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [Mobile, setMobile] = useState(false);
   const location = useLocation();
-  const history = useHistory();
 
   const closeMobileMenu = () => {
     setMobile(false);
@@ -15,7 +13,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar">
-        <p className="font">Website Outline</p>
+        <p className="font"> Product Name </p>
         <ul className={Mobile ? "nav-links-mobile" : "nav-links"} onClick={closeMobileMenu}>
           <NavLink to="/" label="Dashboard" />
           <NavLink to="/resources" label="Resources" />
@@ -39,7 +37,8 @@ const NavLink = ({ to, label }) => {
   return (
     <Link
       to={to}
-      className={`nav-link ${isActive ? "active" : ""}`}>
+      className={`nav-link ${isActive ? "active" : ""}`}
+    >
       <li>{label}</li>
     </Link>
   );
