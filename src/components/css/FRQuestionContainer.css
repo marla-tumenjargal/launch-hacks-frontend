@@ -1,0 +1,16 @@
+.frq-container-component {
+    width: 10vw;
+    border: 3px #571FE5 solid;
+}
+
+.frq-container {
+    display: flex;
+}
+
+.frq-correct {
+    color: greenyellow;
+}
+
+.frq-incorrect {
+    color: red;
+}

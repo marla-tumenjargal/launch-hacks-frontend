@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/MCQuestion.css";
 
 export default function MCQuestion({ question, answer, answers, handleClosePopup }) {
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [isCorrect, setIsCorrect] = useState("");
-
+  const [quesstion, setQuestion] = useState();
+  useEffect(() => {
+    async function getMCQuestion() {
+      const response = await fetch("http://localhost:8080/v1/trivia/mcq/hi");
+      const data = await response.json();
+      setQuestion(data);
+    }
+    getMCQuestion();
+  }, []);
+  
   const changeAnswer = (selected) => {
     if (selectedAnswer === "") {
       setSelectedAnswer(selected);
