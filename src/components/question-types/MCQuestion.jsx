@@ -1,67 +1,43 @@
-import { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../css/MCQuestion.css";
-export default function MCQuestion() {
-  const [selectedAnswer, setSelectedAnswer] = useState("");
-  const [hidden, setHidden] = useState("hidden");
-  const [isCorrect, setIsCorrect] = useState("");
-  const [question, setQuestion] = useState();
-  useEffect(() => {
-    async function getMCQuestion() {
-      const response = await fetch("http://localhost:8080/v1/trivia/mcq/hi");
-      const data = await response.json();
-      setQuestion(data);
-    }
-    getMCQuestion();
-  }, []);
-  useEffect(() => {
-    if (!question) {
-      return;
-    }
-    if (selectedAnswer == question.correct) {
-      setIsCorrect("Correct!");
-    } else if (selectedAnswer == "") {
-      return;
-    } else {
-      setIsCorrect("Incorrect");
-    }
-  }, [selectedAnswer]);
 
-  function changeAnswer(answer) {
-    if (selectedAnswer == "") {
-      setSelectedAnswer(answer);
-      setHidden("");
+export default function MCQuestion({ question, answer, answers, handleClosePopup }) {
+  const [selectedAnswer, setSelectedAnswer] = useState("");
+  const [isCorrect, setIsCorrect] = useState("");
+
+  const changeAnswer = (selected) => {
+    if (selectedAnswer === "") {
+      setSelectedAnswer(selected);
+      setIsCorrect(selected === answer ? "Correct!" : "Incorrect");
     }
-    return;
-  }
+  };
+
+  const handleNextQuestion = () => {
+    setSelectedAnswer("");
+    setIsCorrect("");
+    handleClosePopup();
+  };
+
+  // Array of Unicode characters for answers (a, b, c, d)
+  const answerIcons = ["\u0041", "\u0042", "\u0043", "\u0044"];
 
   return (
-    <>
-      {question && (
-        <div className="mcq">
-          <h2>{question.question}</h2>
-          <div className="mcq-answer-container">
-            {question.answer.map((data) => {
-              let correct = data == question.correct ? "correct" : "incorrect";
-              return (
-                <div
-                  key={data}
-                  onClick={() => changeAnswer(data)}
-                  className={"mcq-answer-option " + correct + " " + hidden}
-                >
-                  {data}
-                </div>
-              );
-            })}
-          </div>
-          <div>{isCorrect}</div>
-          <button
-            className="mcq-submit"
-            onClick={() => window.location.reload()}
-          >
+    <div className="popup">
+      <div className="popup-content">
+        <h2 className="popup-question subtitle">{question}</h2>
+        <ul className="popup-answers description">
+          {answers.map((data, index) => (
+            <li key={index} onClick={() => changeAnswer(data)}>
+              {/* Render the answer icon followed by the answer */}
+              {answerIcons[index]} {data}
+            </li>
+          ))}
+        </ul>
+        <div>{isCorrect}</div>
+        <button className="styled-button-one popup-next" onClick={handleNextQuestion}>
             Next
           </button>
-        </div>
-      )}
-    </>
+      </div>
+    </div>
   );
 }
