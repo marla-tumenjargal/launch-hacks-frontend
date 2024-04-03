@@ -1,4 +1,4 @@
-.register-form {
+.login-form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,16 +9,16 @@
     border-radius: 5px;
   }
   
-  .register-form-group {
+  .login-form-group {
     margin-bottom: 1rem;
   }
   
-  .register-field-label {
+  .login-field-label {
     margin-bottom: 0.5rem;
     font-size: 0.8rem;
   }
   
-  .register-user-input {
+  .login-user-input {
     padding: 0.8rem;
     font-size: 1rem;
     border: 1px solid #ccc;
@@ -26,7 +26,7 @@
     width: 100%;
   }
   
-  .register-submit-button {
+  .login-submit-button {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
     cursor: pointer;
