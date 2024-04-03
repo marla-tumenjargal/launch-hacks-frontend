@@ -1,6 +1,6 @@
 const keys = {
-    apiKey : "API-KEY",
-    mapId : "MAP-ID",
+    apiKey : "api-key",
+    mapId : "map-id",
 }
 
 export default keys;

@@ -28,10 +28,10 @@ function App() {
             <Dashboard />
           </Route>
           <Route path="/resources" exact>
-            <Resources />
+          <FRQuestion questions={exampleStuff} />
           </Route>
           <Route path="/about" exact>
-            <FRQuestion questions={exampleStuff} />
+            <About />
           </Route>
           <Route path="/contact" exact>
             <Contact />
