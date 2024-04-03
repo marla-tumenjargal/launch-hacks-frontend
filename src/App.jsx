@@ -9,6 +9,7 @@ import { TopBar } from './components';
 import Pages from './components/Map-Utilities/map';
 import MCQuestion from './components/question-types/MCQuestion';
 import FRQuestion from './components/question-types/FRQuestion';
+import Register from './components/Register';
 
 const exampleStuff = [
   { question: "why do i love cats?", answer: "purring", solved: false }, { question: "lololol", answer: "thats pretty funny", solved: false }
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route path="/maps" exact>
             <Pages />
+          </Route>
+          <Route path="/register" exact>
+            <Register />
           </Route>
         </Switch>
       </Router>
