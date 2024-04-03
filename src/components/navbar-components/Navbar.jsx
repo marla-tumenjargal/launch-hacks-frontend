@@ -21,6 +21,7 @@ const Navbar = () => {
           <NavLink to="/contact" label="Trivia" />
           <NavLink to="/about" label="About" />
           <NavLink to="/maps" label="Maps" />
+          <NavLink to="/frq" label="Free-Response" />
         </ul>
         <button
           className="mobile-menu-icon"
