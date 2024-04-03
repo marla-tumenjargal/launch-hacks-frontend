@@ -28,7 +28,7 @@ function App() {
             <Dashboard />
           </Route>
           <Route path="/resources" exact>
-          <FRQuestion questions={exampleStuff} />
+          <Resources />
           </Route>
           <Route path="/about" exact>
             <About />
