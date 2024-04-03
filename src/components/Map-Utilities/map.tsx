@@ -147,16 +147,8 @@ function MapComponent({ marker, setMarker, correctMarker, hasSubmitted}: { marke
       disableDefaultUI={true}
     >
       <AdvancedMarker position={{lat : marker.lat, lng : marker.lng}}></AdvancedMarker>
-
-      <AdvancedMarker position={{lat : correctMarker.lat, lng : correctMarker.lng}}>
-          <Pin
-          background={"blue"}
-          borderColor={"blue"}
-          glyphColor={"white"}
-          />
-        </AdvancedMarker>
         
-      {/* {hasSubmitted && (
+      {hasSubmitted && (
         <AdvancedMarker position={{lat : correctMarker.lat, lng : correctMarker.lng}}>
           <Pin
           background={"blue"}
@@ -164,7 +156,7 @@ function MapComponent({ marker, setMarker, correctMarker, hasSubmitted}: { marke
           glyphColor={"white"}
           />
         </AdvancedMarker>
-      )} */}
+      )}
 
     </Map>
   );
