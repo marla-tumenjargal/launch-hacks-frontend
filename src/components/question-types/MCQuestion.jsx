@@ -27,7 +27,6 @@ export default function MCQuestion({ question, answer, answers, handleClosePopup
     handleClosePopup();
   };
 
-  // Array of Unicode characters for answers (a, b, c, d)
   const answerIcons = ["\u0041", "\u0042", "\u0043", "\u0044"];
 
   return (
@@ -37,7 +36,6 @@ export default function MCQuestion({ question, answer, answers, handleClosePopup
         <ul className="popup-answers description">
           {answers.map((data, index) => (
             <li key={index} onClick={() => changeAnswer(data)}>
-              {/* Render the answer icon followed by the answer */}
               {answerIcons[index]} {data}
             </li>
           ))}
