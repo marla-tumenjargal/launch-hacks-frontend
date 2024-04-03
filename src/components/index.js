@@ -1,4 +1,3 @@
-import About from "./navbar-components/About";
 import Contact from "./navbar-components/TriviaPage";
 import Navbar from "./navbar-components/Navbar";
 import Resources from "./navbar-components/Leaderboard";
@@ -8,7 +7,6 @@ import TopBar from "./navbar-components/TopBar";
 import CenteredProductFeature from "./navbar-components/CenteredProductFeature";
 
 export {
-    About,
     Contact,
     Dashboard,
     Navbar,

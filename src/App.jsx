@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from './components/navbar-components/Navbar';
-import About from './components/navbar-components/About';
 import Resources from './components/navbar-components/Resources';
 import Contact from './components/navbar-components/TriviaPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -30,9 +29,7 @@ function App() {
           <Route path="/resources" exact>
             <Resources />
           </Route>
-          <Route path="/about" exact>
-            <About />
-          </Route>
+          
           <Route path="/contact" exact>
             <Contact />
           </Route>
