@@ -45,9 +45,6 @@ function App() {
           <Route path="/login" exact>
             <Login />
           </Route>
-          <Route path="/frq" exact>
-            <FRQuestion questions={exampleStuff} />
-          </Route>
         </Switch>
       </Router>
     </>

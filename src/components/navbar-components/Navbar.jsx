@@ -14,14 +14,13 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar">
-        <p className="font"> GeoQuiz </p>
+        <p className="font">  </p>
         <ul className={Mobile ? "nav-links-mobile" : "nav-links"} onClick={closeMobileMenu}>
           <NavLink to="/" label="Dashboard" />
           <NavLink to="/resources" label="Resources" />
           <NavLink to="/contact" label="Trivia" />
           <NavLink to="/about" label="About" />
           <NavLink to="/maps" label="Maps" />
-          <NavLink to="/frq" label="Free-Response" />
         </ul>
         <button
           className="mobile-menu-icon"
