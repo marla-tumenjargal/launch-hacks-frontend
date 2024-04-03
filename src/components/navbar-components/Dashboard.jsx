@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/style.css";
 
-import { BottomHeroOne } from "../../assets"
+import { BottomHeroOne, LandingPageOne, LandingPageTwo, LandingPageThree } from "../../assets"
 import CenteredProductFeature from "./CenteredProductFeature";
 
 const Dashboard = () => {
@@ -18,11 +18,9 @@ const Dashboard = () => {
       <div className="hero-container">
         <div className="hero-content">
           <div className="text-content">
-            <h1 className="subtitle" style={{ marginBottom: '30px' }}> Website Title </h1>
+            <h1 className="subtitle" style={{ marginBottom: '30px' }}> GeoQuiz </h1>
             <p className="description" style={{ marginBottom: '50px' }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta illum tempora,
-              quo explicabo aperiam natus dolorum aliquid debitis eos ratione officiis vel,
-              quidem tempore quam ea perferendis autem hic voluptatibus eligendi.
+              An AI-powered platform aimed at exploring our world through geography trivia, educational resources, and interactive quizzes. GeoQuiz is an all-in-one platform that provides an invaluable opportunity for students and geography lovers to expand their knowledge on geography. 
             </p>
 
             {/* <div className="button-container-hero">
@@ -35,9 +33,11 @@ const Dashboard = () => {
             </div> */}
           </div>
         </div>
-        <div className="image-content">
-          <img src={BottomHeroOne} alt="Hero-image" />
-        </div>
+        <div className="image-content" style={{ width: '800px' }}>
+    <img src={BottomHeroOne} alt="Hero-image" style={{ borderRadius: '15px', width: '100%', height: 'auto' }} />
+</div>
+
+
       </div>
 
 
@@ -46,11 +46,9 @@ const Dashboard = () => {
       <div className="additional-text-one hero-container">
         <div className="hero-content">
           <div className="text-content">
-            <h2> Trivia Questions </h2>
+            <h2> What We Offer </h2>
             <p className="description-1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-              aboris nisi ut aliquip ex ea commodo consequat.
+            Multiple Choice Questions (MCQs) provide options for you to choose the correct answer. Free Response Questions (FRQs) allow you to express your understanding in your own words. With Map Pinpoint questions, you can test your geographical knowledge by identifying specific locations on a map. Whether you prefer options, free expression, or map-based challenges, we have something for everyone to engage and learn.
             </p>
             <div className="button-container-hero-2">
               <button onClick={handleClickRegister} className="styled-button-three" style={{ marginRight: '10px' }}>
@@ -74,32 +72,25 @@ const Dashboard = () => {
       <div className="hero-container">
         <div className="hero-content">
           <div className="text-content">
-            <h1>
-              Sed ut perspiciatis unde omnis iste natus
+            <h1 className = "subtitle-3">
+              Answer geography multiple choice questions 
             </h1>
-            <p>
-              qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
-            </p>
           </div>
         </div>
         <div className="image-content">
-          <img src={BottomHeroOne} alt="Hero-image" />
+        <img src={LandingPageOne} alt="Hero-image" style={{ borderRadius: '15px', width: '100%', height: 'auto' }} />
         </div>
       </div>
 
       {/*Second Landing */}
       <div className="hero-container">
         <div className="image-content">
-          <img src={BottomHeroOne} alt="Hero-image" />
+          <img src={LandingPageTwo} alt="Hero-image" />
         </div>
         <div className="hero-content">
           <div className="text-content">
-            <h1>Csed ut perspiciatis unde omnis iste natus</h1>
-            <p>
-              {" "}
-              qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
-              {" "}
-            </p>
+            <h1 className = "subtitle-3">Answer geography map pinpoint questions </h1>
+            
           </div>
         </div>
       </div>
@@ -108,15 +99,12 @@ const Dashboard = () => {
       <div className="hero-container">
         <div className="hero-content">
           <div className="text-content">
-            <h1>Keep a record of important events with annotations</h1>
-            <p>
-              Take timestamped notes right alongside your transcript to keep
-              track of the most important sections for future reference.
-            </p>
+            <h1 className = "subtitle-3">Access educational resources from National Competitions, Khan Academy, and so much more </h1>
+             
           </div>
         </div>
         <div className="image-content">
-          <img src={BottomHeroOne} alt="Hero-image" />
+          <img src={LandingPageThree} alt="Hero-image" />
         </div>
       </div>
     </div>

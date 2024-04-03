@@ -5,27 +5,27 @@ import "../styles/style.css";
 const CenteredProductFeature = () => {
   const features = [
     {
-      name: 'Product Feature #1',
+      name: 'Engaged Learning Experience',
       description:
-        'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
+        'We offer a variety of quizzes and trivia challenges that makes the process of learning geography engaging.',
       icon: CloudArrowUpIcon,
     },
     {
-      name: 'Product Feature #2',
+      name: 'Accessibility',
       description:
-        'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
+        'With multiple question formats including FRQ, MCQ, and map pinpoint, GeoQuiz caters to different learning styles and preferences. This accessbility ensures that every user can engage with geography in ways that best suit their personal needs. ',
       icon: LockClosedIcon,
     },
     {
-      name: 'Product Feature #3',
+      name: 'AI-Powered Insights',
       description:
-        'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
+        'GeoQuiz is powered by ChatGPTs API model, making it perfect for users to track their progress within each question and to answer a variety of updated questions.',
       icon: ArrowPathIcon,
     },
     {
-      name: 'Product Feature #4',
+      name: 'Explore the globe',
       description:
-        'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
+        'GeoQuiz allows for an all-in-one learning experience by learning new countries, capitals, and landmarks.',
       icon: FingerPrintIcon,
     },
   ];
@@ -34,11 +34,10 @@ const CenteredProductFeature = () => {
     <div className="feature-section">
       <div className="container">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="title">Introducing Geoguesser 2.0</h2>
-          <p className="subtitle">Everything you need to deploy your app</p>
+          <h2 className="title">Introducing GeoQuiz</h2>
+          <p className="subtitle"> Why we offer accessible geography education </p>
           <p className="description">
-            Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum
-            pulvinar et feugiat blandit at. In mi viverra elit nunc.
+            Geography education is not universal in quality and accessibility for many students throughout the world. Thus, GeoQuiz aims to provide a way for students to explore, learn, and understand our world better through a personalized learning experience.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">

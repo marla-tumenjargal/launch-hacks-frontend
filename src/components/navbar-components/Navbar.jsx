@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar">
-        <p className="font"> Product Name </p>
+        <p className="font"> GeoQuiz </p>
         <ul className={Mobile ? "nav-links-mobile" : "nav-links"} onClick={closeMobileMenu}>
           <NavLink to="/" label="Dashboard" />
           <NavLink to="/resources" label="Resources" />

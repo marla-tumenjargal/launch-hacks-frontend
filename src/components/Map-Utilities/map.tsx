@@ -59,6 +59,7 @@ export default function MapPage() {
 
   const getResult = () => {
     console.log("CORRECT ANSWER: " + correctAnswer)
+    console.log(correctMarker.lat + correctMarker.lng)
     setHasSubmitted(true);
     console.log(hasSubmitted);
     const calculatedDistance : number = haversine(marker, correctMarker) * metersToMilesFactor;
@@ -83,6 +84,7 @@ export default function MapPage() {
     setColor(backgroundColors.white);
 
     const coords = await connector.getCoordinates(data.correct);
+    console.log(coords)
     setCorrectMarker({lat : coords.lat, lng : coords.lng});
     console.log("DONE");
   }
@@ -144,7 +146,15 @@ function MapComponent({ marker, setMarker, correctMarker, hasSubmitted}: { marke
     >
       <AdvancedMarker position={{lat : marker.lat, lng : marker.lng}}></AdvancedMarker>
 
-      {hasSubmitted && (
+      <AdvancedMarker position={{lat : correctMarker.lat, lng : correctMarker.lng}}>
+          <Pin
+          background={"blue"}
+          borderColor={"blue"}
+          glyphColor={"white"}
+          />
+        </AdvancedMarker>
+        
+      {/* {hasSubmitted && (
         <AdvancedMarker position={{lat : correctMarker.lat, lng : correctMarker.lng}}>
           <Pin
           background={"blue"}
@@ -152,7 +162,7 @@ function MapComponent({ marker, setMarker, correctMarker, hasSubmitted}: { marke
           glyphColor={"white"}
           />
         </AdvancedMarker>
-      )}
+      )} */}
 
     </Map>
   );
