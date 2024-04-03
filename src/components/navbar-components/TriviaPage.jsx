@@ -38,11 +38,7 @@ const Contact = () => {
           <div className="text-content">
             <h1 className="subtitle" style={{ marginBottom: '30px' }}> Start your geographic trivia quiz! </h1>
             <p className="description" style={{ marginBottom: '50px' }}>
-              Descriptive Text on the Quiz: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta illum tempora,
-              quo explicabo aperiam natus dolorum aliquid debitis eos ratione officiis vel,
-              quidem tempore quam ea perferendis autem hic voluptatibus eligendi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta illum tempora,
-              quo explicabo aperiam natus dolorum aliquid debitis eos ratione officiis vel,
-              quidem tempore quam ea perferendis autem hic voluptatibus eligendi.
+              Test your geography knowledge with this multiple choice quiz!
             </p>
 
             <div className="button-container-hero">
