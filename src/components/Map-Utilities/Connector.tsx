@@ -16,6 +16,19 @@ export class Connector {
     }
 
     /**
+     * This calls the server to get new questions
+     * @param amount - amount of questions to receive
+     * @returns - returns questions
+     */
+    async getNewQuestions(amount : number) {
+        const payload = "http://localhost:8080/v1/trivia/questions/new/" + amount;
+
+        const response = await fetch(payload);
+        const data = await response.json();
+        return data;
+    }
+
+    /**
      * This converts an address(city for our purposes) into latitude longitude coordinates
      * @param address - city to be converted into coordinates
      * @returns = returns latitude longitude for that city

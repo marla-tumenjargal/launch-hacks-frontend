@@ -49,10 +49,12 @@ export default function FRQuestion(props) {
     let connector = new Connector();
     const NUMBER_OF_QUESTIONS = 3;
 
-    for (let i = 0; i < NUMBER_OF_QUESTIONS; i++) {
-      const response = connector.getMapQuestion();
-      const data = await response;
-      const question = { question: data.question, answer: data.correct, solved: false };
+    const response = connector.getNewQuestions(NUMBER_OF_QUESTIONS);
+    const data = await response;
+
+    for (let i = 0; i < data.length; i++) {
+      console.log(data[i].correct);
+      const question = { question: data[i].question, answer: data[i].correct, solved: false };
       questionHolder.push(question);
     }
 
