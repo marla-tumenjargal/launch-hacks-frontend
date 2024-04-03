@@ -541,3 +541,74 @@ button {
   cursor: pointer;
 }
 
+
+/* STYLING FOR ABOUT PAGE */
+.feature-container {
+  overflow: hidden;
+  background-color: white;
+  padding: 6rem 0;
+}
+
+.feature-content {
+  margin: 0 auto;
+  max-width: calc(100% - 250px);  /* Equivalent to max-w-7xl */
+  padding: 0 3rem; /* Equivalent to px-6 */
+  display: flex; /* Align items horizontally */
+  align-items: center; /* Center items vertically */
+}
+
+.feature-info {
+  flex: 1; /* Take remaining space */
+}
+
+.feature-title {
+  font-size: 1.5rem; /* Adjusted size */
+  font-weight: 600; /* Equivalent to font-semibold */
+  color: #4f46e5; /* Equivalent to text-indigo-600 */
+}
+
+.feature-subtitle {
+  margin-top: 1rem; /* Adjusted margin */
+  font-size: 2.5rem; /* Adjusted size */
+  font-weight: 700; /* Equivalent to font-bold */
+  line-height: 1; /* Adjusted line height */
+  color: #1f2937; /* Equivalent to text-gray-900 */
+}
+
+.feature-description {
+  margin-top: 2rem; /* Adjusted margin */
+  font-size: 1.25rem; /* Adjusted size */
+  line-height: 1.625; /* Equivalent to leading-8 */
+  color: #374151; /* Equivalent to text-gray-600 */
+}
+
+.feature-list {
+  margin-top: 3rem; /* Adjusted margin */
+}
+
+.feature-item {
+  position: relative;
+  padding-left: 8rem; /* Equivalent to pl-9 */
+}
+
+.feature-icon {
+  position: absolute;
+  left: 0.5rem; /* Equivalent to left-1 */
+  top: 0.5rem; /* Equivalent to top-1 */
+  font-size: 1rem; /* Equivalent to h-5 and w-5 */
+  color: #4f46e5; /* Equivalent to text-indigo-600 */
+  gap: 2rem;
+}
+
+.feature-text {
+  display: inline;
+}
+
+.product-screenshot {
+  width: 90rem; /* Equivalent to w-[48rem] */
+  max-width: none;
+  border-radius: 1.5rem; /* Equivalent to rounded-xl */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-xl */
+  margin: 0 auto; /* Center align horizontally */
+  margin-right: 100px; /* Add 100px margin to the right */
+}
