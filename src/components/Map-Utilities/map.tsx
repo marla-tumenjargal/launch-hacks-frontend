@@ -21,9 +21,24 @@ interface MarkerPosition {
 
 /**
  * Default map options for the Map Component;
+ * position is the default area that the map looks at
+ * maximumDistance is how far away the user's guess can be before it is wrong
  */
 const mapOptions = {
   position: { lat: 43.6532, lng: -79.3832 },
+  maximumDistance: 200,
+}
+
+/**
+ * Contains background colors for red, white, and green
+ * White is the default
+ * Green is if user's guess is within specified distance
+ * Red is if user's guess isn't within specified distance
+ */
+const backgroundColors = {
+  red : "#F73C5E",
+  white : "#FFFFFF",
+  green : "#0B9B0A",
 }
 
 /**
@@ -31,19 +46,25 @@ const mapOptions = {
  * @returns returns tsx for map page
  */
 export default function MapPage() {
+  const metersToMilesFactor : number = 0.00061504297; 
+
   const [marker, setMarker] = useState<MarkerPosition>({lat : 0, lng : 0}); //initializes state for marker
   const [correctMarker, setCorrectMarker] = useState<MarkerPosition>({lat : 0, lng : 0});
-  const metersToMilesFactor : number = 0.00061504297;
   const [question,setQuestion] = useState<string>("");
+  const [correctAnswer, setCorrectAnswer] = useState<string>("");
+  const [color,setColor] = useState<string>(backgroundColors.white);
+  const [hasSubmitted, setHasSubmitted] = useState<boolean>(false);
 
   const getResult = () => {
+    console.log("CORRECT ANSWER: " + correctAnswer)
+    setHasSubmitted(true);
+    console.log(hasSubmitted);
     const distance : number = haversine(marker, correctMarker) * metersToMilesFactor;
-    console.log("Distance in miles: " + distance);
 
-    if (distance <= 100) {
-      console.log("WITHIN 100 miles");
+    if (distance <= mapOptions.maximumDistance) {
+      setColor(backgroundColors.green);
     } else {
-      console.log("Womp womp");
+      setColor(backgroundColors.red);
     }
   }
 
@@ -53,29 +74,39 @@ export default function MapPage() {
     const response = connector.getMapQuestion();
     const data = await response;
 
+    setHasSubmitted(false);
+    setQuestion(data.question);
+    setCorrectAnswer(data.correct);
+    setColor(backgroundColors.white);
+
     const coords = await connector.getCoordinates(data.correct);
     setCorrectMarker({lat : coords.lat, lng : coords.lng});
     console.log("DONE");
   }
 
   return (
-    <div className="map-page-container">
+    <div className="map-page-container" style={{backgroundColor : color}}>
       <header className="map-header">
         <h1 className = "subtitle">Map Page</h1>
         <p className = "description">Explore the map and find your location!</p>
+        <div className="button-container">
+          {question}
+          <button onClick={getResult}>Submit!</button>
+          <button onClick={getQuestion}>Get A Question</button>
+          {hasSubmitted && (
+            <p>{correctAnswer}</p>
+          )}
+        </div>
       </header>
 
       <div className="map-container">
         <APIProvider apiKey={keys.apiKey}>
-          <MapComponent marker={marker} setMarker={setMarker} correctMarker={correctMarker}/>
+          <MapComponent marker={marker} setMarker={setMarker} correctMarker={correctMarker} hasSubmitted={hasSubmitted}/>
         </APIProvider>
       </div>
 
-      <div className="button-container">
-        <button onClick={getResult}>Submit!</button>
-        <button onClick={getQuestion}>Get A Question</button>
-      </div>
-      {question}
+
+
     </div>
   );
 }
@@ -85,7 +116,7 @@ export default function MapPage() {
  * @param param0 - these are the marker and setMarker state variables to update marker position
  * @returns - returns functionality for Map Component
  */
-function MapComponent({ marker, setMarker, correctMarker}: { marker: MarkerPosition, setMarker: React.Dispatch<React.SetStateAction<MarkerPosition>>, correctMarker : MarkerPosition}) {
+function MapComponent({ marker, setMarker, correctMarker, hasSubmitted}: { marker: MarkerPosition, setMarker: React.Dispatch<React.SetStateAction<MarkerPosition>>, correctMarker : MarkerPosition, hasSubmitted : boolean}) {
   const setMarkerPosition = (event) => {
     const lat = event.detail.latLng.lat;
     const lng = event.detail.latLng.lng;
@@ -106,7 +137,10 @@ function MapComponent({ marker, setMarker, correctMarker}: { marker: MarkerPosit
       disableDefaultUI={true}
     >
       <AdvancedMarker position={{lat : marker.lat, lng : marker.lng}}></AdvancedMarker>
-      <AdvancedMarker position={{lat : correctMarker.lat, lng : correctMarker.lng}}></AdvancedMarker>
+
+      {hasSubmitted && (
+        <AdvancedMarker position={{lat : correctMarker.lat, lng : correctMarker.lng}}></AdvancedMarker>
+      )}
 
     </Map>
   );

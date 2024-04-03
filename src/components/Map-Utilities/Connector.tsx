@@ -12,6 +12,7 @@ export class Connector {
 
         const response = await fetch(payload);
         const data = await response.json();    
+        
         return data;
     }
 
@@ -25,6 +26,7 @@ export class Connector {
 
         const response = await fetch(payload);
         const data = await response.json();
+
         return data;
     }
 
@@ -35,14 +37,11 @@ export class Connector {
      */
     async getCoordinates(address : string) {
         let api: string = "https://maps.googleapis.com/maps/api/geocode/json?address=";
-
         api += address + "&key=" + keys.apiKey;
 
         const response = await fetch(api);
-
         const data = await response.json();
 
-        console.log(data.results[0].geometry.location);
         return data.results[0].geometry.location;
     }
 
