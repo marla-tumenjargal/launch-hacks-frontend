@@ -62,7 +62,7 @@ const Contact = () => {
 
       {showPopup && fetchedQuestion && ( 
         <div className="popup-content">
-          <MCQuestion question={fetchedQuestion.question} answer={fetchedQuestion.correct} answers={fetchedQuestion.choices} handleClosePopup={handleNextQuestion} />
+          <MCQuestion question={fetchedQuestion.question} answer={fetchedQuestion.correct} answers={fetchedQuestion.answer} handleClosePopup={handleNextQuestion} />
         </div>
       )}
     </div>
