@@ -3,15 +3,11 @@ import keys from "./keys";
 export class Connector {
     constructor () {}
 
-    async getQuestion() {
+    async getMapQuestion() {
         const payload = "http://localhost:8080/v1/trivia/map/Asia";
 
         const response = await fetch(payload);
-        const data = await response.json();
-    
-        console.log(data.question);
-        console.log(data.correct);
-    
+        const data = await response.json();    
         return data;
     }
 

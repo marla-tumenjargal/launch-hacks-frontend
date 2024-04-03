@@ -13,7 +13,7 @@ export default function MCQuestion({ question, answer, answers, handleClosePopup
     }
     getMCQuestion();
   }, []);
-  
+
   const changeAnswer = (selected) => {
     if (selectedAnswer === "") {
       setSelectedAnswer(selected);
@@ -44,8 +44,8 @@ export default function MCQuestion({ question, answer, answers, handleClosePopup
         </ul>
         <div>{isCorrect}</div>
         <button className="styled-button-one popup-next" onClick={handleNextQuestion}>
-            Next
-          </button>
+          Next
+        </button>
       </div>
     </div>
   );

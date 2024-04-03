@@ -1,12 +1,20 @@
 import { useEffect, useState } from "react";
 import FRQuestionContainer from "./FRQuestionContainer";
+import { Connector } from "../Map-Utilities/Connector";
 
 export default function FRQuestion(props) {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(""); //user input
   const [questionArray, setQuestionArray] = useState(props.questions);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [hasEnded, setHasEnded] = useState();
+
+
   useEffect(() => {
+
+    for (let i = 0; i < questionArray.length; i++) {
+      console.log(questionArray[i].answer);
+    }
+
     for (let i = 0; i < questionArray.length; i++) {
       if (value == questionArray[i].answer && !questionArray[i].solved) {
         setCorrectAnswers(correctAnswers + 1);
@@ -22,13 +30,31 @@ export default function FRQuestion(props) {
       }
     }
 
-    if (correctAnswers >= questionArray.length) {
+    if (correctAnswers == questionArray.length) {
       endGame();
     }
   });
 
+
   function endGame() {
     setHasEnded(true);
+  }
+
+  const nextHandler = async () => {
+    let questionHolder = [];
+    let connector = new Connector();
+
+    for (let i = 0; i < 3; i++) {
+      const response = connector.getMapQuestion();
+      const data = await response;
+      const question = { question: data.question, answer: data.correct, solved: false };
+      questionHolder.push(question);
+    }
+
+    setValue("");
+    setQuestionArray(questionHolder);
+    setCorrectAnswers(0);
+    setHasEnded(false);
   }
 
   return (
@@ -46,8 +72,8 @@ export default function FRQuestion(props) {
         {hasEnded && (
           <div>
             You got {correctAnswers} / {questionArray.length}
-            <button>
-                Next
+            <button onClick={nextHandler}>
+              Next
             </button>
           </div>
         )}

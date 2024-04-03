@@ -49,7 +49,7 @@ export default function MapPage() {
   const getQuestion = async () => {
     let connector : Connector = new Connector();
 
-    const response = connector.getQuestion();
+    const response = connector.getMapQuestion();
     const data = await response;
 
     const coords = await connector.getCoordinates(data.correct);
