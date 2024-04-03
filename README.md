@@ -8,3 +8,6 @@ Run using the following command:
 npm install
 npm run dev
 ```
+Run backend server
+
+https://github.com/TheSilentIce/LaunchHacksIII-Backend
