@@ -1,6 +1,6 @@
 const keys = {
-    apiKey : "AIzaSyC7vAZCZKnXapxabySSTgPbkw37Gl9_AsM",
-    mapId : "a08a0d3037404977",
+    apiKey : "api-key",
+    mapId : "map-id",
 }
 
 export default keys;
