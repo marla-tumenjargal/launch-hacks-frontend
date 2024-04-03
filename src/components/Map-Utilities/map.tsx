@@ -2,6 +2,7 @@ import {
   APIProvider,
   AdvancedMarker,
   Map,
+  Pin,
 } from "@vis.gl/react-google-maps"
 
 import haversine from "haversine-distance";
@@ -54,14 +55,16 @@ export default function MapPage() {
   const [correctAnswer, setCorrectAnswer] = useState<string>("");
   const [color,setColor] = useState<string>(backgroundColors.white);
   const [hasSubmitted, setHasSubmitted] = useState<boolean>(false);
+  const [distance, setDistance] = useState<number>();
 
   const getResult = () => {
     console.log("CORRECT ANSWER: " + correctAnswer)
     setHasSubmitted(true);
     console.log(hasSubmitted);
-    const distance : number = haversine(marker, correctMarker) * metersToMilesFactor;
+    const calculatedDistance : number = haversine(marker, correctMarker) * metersToMilesFactor;
+    setDistance(calculatedDistance);
 
-    if (distance <= mapOptions.maximumDistance) {
+    if (calculatedDistance <= mapOptions.maximumDistance) {
       setColor(backgroundColors.green);
     } else {
       setColor(backgroundColors.red);
@@ -88,13 +91,16 @@ export default function MapPage() {
     <div className="map-page-container" style={{backgroundColor : color}}>
       <header className="map-header">
         <h1 className = "subtitle">Map Page</h1>
-        <p className = "description">Explore the map and find your location!</p>
+        <p className = "description">Place a pin on where you think the correct answer is!</p>
         <div className="button-container">
           {question}
-          <button onClick={getResult}>Submit!</button>
-          <button onClick={getQuestion}>Get A Question</button>
+          <button className="btn btn-outline-primary" onClick={getResult}>Submit!</button>
+          <button className="btn btn-outline-secondary" onClick={getQuestion}>Get A Question</button>
           {hasSubmitted && (
+            <>
             <p>{correctAnswer}</p>
+            <p> You were {distance} miles away!</p>
+            </>
           )}
         </div>
       </header>
@@ -139,7 +145,13 @@ function MapComponent({ marker, setMarker, correctMarker, hasSubmitted}: { marke
       <AdvancedMarker position={{lat : marker.lat, lng : marker.lng}}></AdvancedMarker>
 
       {hasSubmitted && (
-        <AdvancedMarker position={{lat : correctMarker.lat, lng : correctMarker.lng}}></AdvancedMarker>
+        <AdvancedMarker position={{lat : correctMarker.lat, lng : correctMarker.lng}}>
+          <Pin
+          background={"blue"}
+          borderColor={"blue"}
+          glyphColor={"white"}
+          />
+        </AdvancedMarker>
       )}
 
     </Map>
