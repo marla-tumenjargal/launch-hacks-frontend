@@ -73,6 +73,7 @@ export default function MapPage() {
   }
 
   const getQuestion = async () => {
+    console.log("clicked");
     let connector : Connector = new Connector();
 
     const response = connector.getMapQuestion();
