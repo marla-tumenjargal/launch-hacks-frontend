@@ -40,11 +40,16 @@ export default function FRQuestion(props) {
     setHasEnded(true);
   }
 
+  /**
+   * This method resets the entire page with new questions.
+   * It calls the server x amount of times (can be changed via NUMBER_OF_QUESTIONS variable) and then sets the question array to hold the new questions.
+   */
   const nextHandler = async () => {
     let questionHolder = [];
     let connector = new Connector();
+    const NUMBER_OF_QUESTIONS = 3;
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < NUMBER_OF_QUESTIONS; i++) {
       const response = connector.getMapQuestion();
       const data = await response;
       const question = { question: data.question, answer: data.correct, solved: false };
