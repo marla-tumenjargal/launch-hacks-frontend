@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './style.css';
-import MCQuestion from './question-types/MCQuestion'; 
+import './css/style.css';
+import MCQuestion from '../question-types/MCQuestion'; 
 
 const Contact = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -20,10 +20,10 @@ const Contact = () => {
 
   const handleNextQuestion = async () => {
     try {
-      const response = await fetch("http://localhost:8080/v1/trivia/mcq/hi"); // Fetch another question
+      const response = await fetch("http://localhost:8080/v1/trivia/mcq/hi");
       const data = await response.json();
       console.log("Fetched next question:", data); 
-      setFetchedQuestion(data); // Update state with the new question
+      setFetchedQuestion(data);
     } catch (error) {
       console.error('Error fetching next question:', error);
     }
@@ -61,9 +61,12 @@ const Contact = () => {
       </div>
 
       {showPopup && fetchedQuestion && ( 
-        <div className="popup-content">
-          <MCQuestion question={fetchedQuestion.question} answer={fetchedQuestion.correct} answers={fetchedQuestion.answer} handleClosePopup={handleNextQuestion} />
-        </div>
+            <MCQuestion 
+              question={fetchedQuestion.question} 
+              answer={fetchedQuestion.correct} 
+              answers={fetchedQuestion.choices} // Assuming choices is an array of answer choices
+              handleClosePopup={handleNextQuestion} 
+            />
       )}
     </div>
   );

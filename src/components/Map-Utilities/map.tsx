@@ -9,6 +9,7 @@ import { Connector } from "./Connector";
 import React, { useState } from 'react';
 import keys from "./keys"; //Just for development purposes, will rework for final product
 
+import '../css/MapPoint.css'; // Import CSS file
 
 /**
  * This interface is to store the position of the marker
@@ -58,23 +59,29 @@ export default function MapPage() {
   }
 
   return (
-    <>
-    <div style={{ height: "50vh", width: "40%", paddingLeft : "5rem"}}>
-      <APIProvider apiKey={keys.apiKey}>
-        <MapComponent marker={marker} setMarker={setMarker} correctMarker={correctMarker}/>
-      </APIProvider>
+    <div className="map-page-container">
+      <header className="map-header">
+        <h1 className = "subtitle">Map Page</h1>
+        <p className = "description">Explore the map and find your location!</p>
+      </header>
+
+      <div className="map-container">
+        <APIProvider apiKey={keys.apiKey}>
+          <MapComponent marker={marker} setMarker={setMarker} correctMarker={correctMarker}/>
+        </APIProvider>
+      </div>
+
+      <div className="button-container">
+        <button onClick={getResult}>Submit!</button>
+        <button onClick={getQuestion}>Get A Question</button>
+      </div>
+      {question}
     </div>
-
-    <button onClick={getResult}>Submit!</button>
-
-    <button onClick={getQuestion}>Get A Question</button>
-    {question}
-    </>
   );
 }
 
 /**
- * This is the functionality for the Map itself. It allows for the updating of the marker when user clicks on a differnt part of the map.
+ * This is the functionality for the Map itself. It allows for the updating of the marker when user clicks on a different part of the map.
  * @param param0 - these are the marker and setMarker state variables to update marker position
  * @returns - returns functionality for Map Component
  */

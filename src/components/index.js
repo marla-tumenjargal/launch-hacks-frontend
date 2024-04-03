@@ -1,11 +1,11 @@
-import About from "./About";
-import Contact from "./TriviaPage";
-import Navbar from "./Navbar";
-import Resources from "./Leaderboard";
-import Dashboard from "./Dashboard";
-import ProductFeature from "./Dashboard";
-import TopBar from "./TopBar";
-import CenteredProductFeature from "./CenteredProductFeature";
+import About from "./navbar-components/About";
+import Contact from "./navbar-components/TriviaPage";
+import Navbar from "./navbar-components/Navbar";
+import Resources from "./navbar-components/Leaderboard";
+import Dashboard from "./navbar-components/Dashboard";
+import ProductFeature from "./navbar-components/Dashboard";
+import TopBar from "./navbar-components/TopBar";
+import CenteredProductFeature from "./navbar-components/CenteredProductFeature";
 
 export {
     About,

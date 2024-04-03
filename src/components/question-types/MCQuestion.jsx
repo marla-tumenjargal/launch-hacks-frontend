@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../css/MCQuestion.css";
 
-export default function MCQuestion({ question, answer, answers, handleClosePopup }) {
+export default function MCQuestion({ question, answer, answers = [], handleClosePopup }) {
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [isCorrect, setIsCorrect] = useState("");
 

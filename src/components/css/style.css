@@ -48,7 +48,7 @@
 }
 
 .button-container-hero {
-  display: flex;
+    display: flex;
     flex-direction: horizontal; 
     align-items: flex-start; 
     gap: 25px; 

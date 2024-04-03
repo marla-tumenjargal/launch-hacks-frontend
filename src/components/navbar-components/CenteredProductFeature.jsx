@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline';
-import './style.css'; 
+import './css/style.css'; 
 
 const CenteredProductFeature = () => {
     const features = [
