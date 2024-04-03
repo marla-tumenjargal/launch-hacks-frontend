@@ -130,6 +130,7 @@
     width: 500px;
     margin-right: 30px; /* Add 150 pixels of padding to the right side of the image */
     margin-top: 120px; /* Move the image 50 pixels lower */
+    border-radius: 25px;
   }
   
   .image-content img {
@@ -343,6 +344,13 @@ button {
   font-size: 2rem;
   font-weight: 600;
   color: #ffffff;
+}
+
+.subtitle-3 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
 }
 
 .description {
