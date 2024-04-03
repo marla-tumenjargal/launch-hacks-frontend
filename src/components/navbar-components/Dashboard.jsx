@@ -54,9 +54,9 @@ const Dashboard = () => {
               <button onClick={handleClickRegister} className="styled-button-three" style={{ marginRight: '10px' }}>
                 MCQ
               </button>
-              <button onClick={handleClickLogIn} className="styled-button-three" style={{ marginRight: '10px' }}>
+              {/* <button onClick={handleClickLogIn} className="styled-button-three" style={{ marginRight: '10px' }}>
                 Free Response
-              </button>
+              </button> */}
               <button onClick={handleClickLogIn} className="styled-button-three">
                 Map Pin Point
               </button>
