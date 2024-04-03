@@ -1,14 +1,35 @@
 import React, { useState } from 'react';
 import './style.css';
 import MCQuestion from './question-types/MCQuestion'; 
+
 const Contact = () => {
   const [showPopup, setShowPopup] = useState(false);
-  const exampleAnswers = ["None. They'll just beat the room for being black.", "about 25 I dont really know lel", "An infinite amount, they're all too short", "1 you stupid idiot"]
+  const [fetchedQuestion, setFetchedQuestion] = useState(null);
 
-
-  const handleClosePopup = () => {
-    setShowPopup(false);
+  const startQuiz = async () => {
+    try {
+      const response = await fetch("http://localhost:8080/v1/trivia/mcq/hi");
+      const data = await response.json();
+      console.log("Fetched question:", data); 
+      setFetchedQuestion(data); 
+      setShowPopup(true);
+    } catch (error) {
+      console.error('Error fetching question:', error);
+    }
   };
+
+  const handleNextQuestion = async () => {
+    try {
+      const response = await fetch("http://localhost:8080/v1/trivia/mcq/hi"); // Fetch another question
+      const data = await response.json();
+      console.log("Fetched next question:", data); 
+      setFetchedQuestion(data); // Update state with the new question
+    } catch (error) {
+      console.error('Error fetching next question:', error);
+    }
+  };
+
+  console.log("Fetched question state:", fetchedQuestion); 
 
   return (
     <div>
@@ -25,18 +46,24 @@ const Contact = () => {
             </p>
 
             <div className="button-container-hero">
-              <button onClick={() => setShowPopup(true)} className="styled-button-one" style={{ marginRight: '10px' }}>
-                Start a trivia quiz!
-              </button>
+              {showPopup ? (
+                <button onClick={handleNextQuestion} className="styled-button-one" style={{ marginRight: '10px' }}>
+                  Next
+                </button>
+              ) : (
+                <button onClick={startQuiz} className="styled-button-one" style={{ marginRight: '10px' }}>
+                  Start a trivia quiz!
+                </button>
+              )}
             </div>
           </div>
         </div>
       </div>
 
-      {showPopup && (
-          <div className="popup-content">
-          <MCQuestion question="How many cops does it take to change a light bulb?" answer="None. They'll just beat the room for being black." answers={exampleAnswers}/>
-          </div>
+      {showPopup && fetchedQuestion && ( 
+        <div className="popup-content">
+          <MCQuestion question={fetchedQuestion.question} answer={fetchedQuestion.correct} answers={fetchedQuestion.choices} handleClosePopup={handleNextQuestion} />
+        </div>
       )}
     </div>
   );
