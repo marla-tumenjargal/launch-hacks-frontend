@@ -15,7 +15,9 @@ function Register() {
     const handleSubmit = (event) => {
       event.preventDefault();
       //btw there is no error handling so in the demonstration dont mess it up
-      fetch("http://localhost:8080/v1/trivia/addUser/" + formData.username + "&" + formData.password + "&9")
+      fetch("http://localhost:8080/v1/trivia/addUser/" + formData.username + "&" + formData.password + "&9", {
+        method: "POST"
+      })
       .then(data => console.log(data));
     };
   

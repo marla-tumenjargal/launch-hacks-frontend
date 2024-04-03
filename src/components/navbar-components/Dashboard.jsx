@@ -25,14 +25,14 @@ const Dashboard = () => {
               quidem tempore quam ea perferendis autem hic voluptatibus eligendi.
             </p>
 
-            <div className="button-container-hero">
+            {/* <div className="button-container-hero">
               <button onClick={handleClickRegister} className="styled-button-one" style={{ marginRight: '10px' }}>
                 Register
               </button>
               <button onClick={handleClickLogIn} className="styled-button-two">
                 Log In
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="image-content">

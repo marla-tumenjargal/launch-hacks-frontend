@@ -1,40 +1,79 @@
-import React from 'react';
-import '../styles/Resources.css';
+import React from "react";
+import "../styles/Resources.css";
 
 const geographyResources = [
-    {
-      name: 'National Geographic Bee Website',
-      url: 'https://education.nationalgeographic.com/resource/geography-bee/',
-      description:
-        'Official website with information about the competition, eligibility, and study materials.',
-    },
-    {
-      name: 'National Geographic Bee Study Materials',
-      url: 'https://education.nationalgeographic.com/resource/geography-bee-study-materials/',
-      description:
-        'Access practice quizzes, sample questions, flashcards, maps, and study guides.',
-    },
-    {
-      name: 'Geography Bee (National Geographic World Championship)',
-      url: 'https://world-championship.nationalgeographic.com/',
-      description: 'Online resources and practice quizzes for geography enthusiasts.',
-    },
-    {
-      name: 'Sporcle Geography Quizzes',
-      url: 'https://www.sporcle.com/games/category/geography',
-      description: 'Fun and interactive way to learn geography facts through quizzes.',
-    },
-    {
-      name: 'World Geography Games (National Geographic Kids)',
-      url: 'https://kids.nationalgeographic.com/games/geography-games',
-      description: 'Educational games for learning about countries and regions.',
-    },
-    {
-      name: 'Sheppards Software Geography Games',
-      url: 'https://www.sheppardsoftware.com/Geography.htm',
-      description: 'Variety of geography games for students of all ages.',
-    },
-  ];
+  [
+    "Competitions",
+    [
+      {
+        name: "National Geographic Bee Website",
+        url: "https://education.nationalgeographic.com/resource/geography-bee/",
+        description:
+          "Official website with competition information, eligibility, and study materials.",
+      },
+      {
+        name: "International Geography Bee (IGB)",
+        url: "https://www.iacompetitions.com/international-programs/",
+        description:
+          "International geography competition for grades 4-12 with regional and national levels.",
+      },
+      {
+        name: "The North American Championships (NAC)",
+        url: "https://www.northsouth.org/public/USContests/Finals/geography",
+        description:
+          "Geography competition for grades 6-8 and 9-12 with written and oral rounds.",
+      },
+    ],
+  ],
+  [
+    "Study Guides and Videos",
+    [
+      // Existing Geography Bee resources (unchanged)
+
+      {
+        name: "National Geographic Education",
+        url: "https://education.nationalgeographic.com/",
+        description:
+          "Interactive maps, lesson plans, and resources for teaching and learning geography.",
+        type: "Study Guide", // Add a type property
+      },
+      {
+        name: "Open Geography Education",
+        url: "https://opengeographyeducation.org/",
+        description:
+          "Free, open-source textbooks and resources for geography education.",
+        type: "Study Guide",
+      },
+      {
+        name: "World Bank Open Data",
+        url: "https://data.worldbank.org/topic/geography",
+        description:
+          "Access and download global datasets related to geography and demographics.",
+        type: "Study Guide",
+      },
+      {
+        name: "Crash Course Geography (YouTube)",
+        url: "https://www.youtube.com/playlist?list=PL8dPuCuYrPKz jez6_cIrobvylMwLJJtvT",
+        description: "Engaging video series covering various geography topics.",
+        type: "Video", // Add a type property
+      },
+      {
+        name: "Geography Now (YouTube)",
+        url: "https://www.youtube.com/channel/UCupzzxNFjnFNFUZ-OLgYvwQ",
+        description:
+          "Informative YouTube channel with videos about countries, flags, and geography.",
+        type: "Video",
+      },
+      {
+        name: "Khan Academy: Geography (Video)",
+        url: "https://www.khanacademy.org/test-prep/sat/earth-space-science/earth-g/v/intro-to-geography",
+        description:
+          "Free video lessons and practice exercises for geography concepts.",
+        type: "Video",
+      },
+    ],
+  ],
+];
 
 function GeoResourceCard({ resource }) {
   return (
@@ -52,9 +91,16 @@ function Resources() {
     <div className="geography-resources-container">
       <h1>Geography Learning Resources</h1>
       <div className="geography-resources-grid">
-        {geographyResources.map((resource) => (
-          <GeoResourceCard key={resource.name} resource={resource} />
-        ))}
+        {geographyResources.map((array) => {
+          return (
+            <div>
+              <h2>{array[0]}</h2>
+              {array[1].map((resource) => (
+                <GeoResourceCard key={resource.name} resource={resource} />
+              ))}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
