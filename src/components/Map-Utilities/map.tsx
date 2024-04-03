@@ -39,7 +39,7 @@ const mapOptions = {
 const backgroundColors = {
   red : "#F73C5E",
   white : "#FFFFFF",
-  green : "#0B9B0A",
+  green : "#008E83",
 }
 
 /**
@@ -58,6 +58,7 @@ export default function MapPage() {
   const [distance, setDistance] = useState<number>();
 
   const getResult = () => {
+    console.log(correctMarker.lat + "" + correctMarker.lng);
     console.log("CORRECT ANSWER: " + correctAnswer)
     setHasSubmitted(true);
     console.log(hasSubmitted);
