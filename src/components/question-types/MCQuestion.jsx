@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../css/MCQuestion.css";
+import "../styles/MCQuestion.css";
 
 export default function MCQuestion({ question, answer, answers = [], handleClosePopup }) {
   const [selectedAnswer, setSelectedAnswer] = useState("");

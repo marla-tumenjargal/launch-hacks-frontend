@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './css/style.css';
-import MCQuestion from '../question-types/MCQuestion'; 
+import "../styles/style.css";
+import MCQuestion from '../question-types/MCQuestion';
 
 const Contact = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -10,8 +10,8 @@ const Contact = () => {
     try {
       const response = await fetch("http://localhost:8080/v1/trivia/mcq/hi");
       const data = await response.json();
-      console.log("Fetched question:", data); 
-      setFetchedQuestion(data); 
+      console.log("Fetched question:", data);
+      setFetchedQuestion(data);
       setShowPopup(true);
     } catch (error) {
       console.error('Error fetching question:', error);
@@ -22,14 +22,14 @@ const Contact = () => {
     try {
       const response = await fetch("http://localhost:8080/v1/trivia/mcq/hi");
       const data = await response.json();
-      console.log("Fetched next question:", data); 
+      console.log("Fetched next question:", data);
       setFetchedQuestion(data);
     } catch (error) {
       console.error('Error fetching next question:', error);
     }
   };
 
-  console.log("Fetched question state:", fetchedQuestion); 
+  console.log("Fetched question state:", fetchedQuestion);
 
   return (
     <div>
@@ -42,7 +42,7 @@ const Contact = () => {
               quo explicabo aperiam natus dolorum aliquid debitis eos ratione officiis vel,
               quidem tempore quam ea perferendis autem hic voluptatibus eligendi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta illum tempora,
               quo explicabo aperiam natus dolorum aliquid debitis eos ratione officiis vel,
-              quidem tempore quam ea perferendis autem hic voluptatibus eligendi. 
+              quidem tempore quam ea perferendis autem hic voluptatibus eligendi.
             </p>
 
             <div className="button-container-hero">
@@ -60,13 +60,13 @@ const Contact = () => {
         </div>
       </div>
 
-      {showPopup && fetchedQuestion && ( 
-            <MCQuestion 
-              question={fetchedQuestion.question} 
-              answer={fetchedQuestion.correct} 
-              answers={fetchedQuestion.choices} // Assuming choices is an array of answer choices
-              handleClosePopup={handleNextQuestion} 
-            />
+      {showPopup && fetchedQuestion && (
+        <MCQuestion
+          question={fetchedQuestion.question}
+          answer={fetchedQuestion.correct}
+          answers={fetchedQuestion.choices} // Assuming choices is an array of answer choices
+          handleClosePopup={handleNextQuestion}
+        />
       )}
     </div>
   );

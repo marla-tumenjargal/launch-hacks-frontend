@@ -1,10 +1,10 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import About from './components/About';
-import Resources from './components/Leaderboard';
-import Contact from './components/TriviaPage';
+import Navbar from './components/navbar-components/Navbar';
+import About from './components/navbar-components/About';
+import Resources from './components/navbar-components/Leaderboard';
+import Contact from './components/navbar-components/TriviaPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Dashboard from './components/Dashboard';
+import Dashboard from './components/navbar-components/Dashboard';
 import { TopBar } from './components';
 import Pages from './components/Map-Utilities/map';
 import MCQuestion from './components/question-types/MCQuestion';

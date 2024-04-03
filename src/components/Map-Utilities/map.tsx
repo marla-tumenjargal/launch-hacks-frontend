@@ -9,7 +9,7 @@ import { Connector } from "./Connector";
 import React, { useState } from 'react';
 import keys from "./keys"; //Just for development purposes, will rework for final product
 
-import '../css/MapPoint.css'; // Import CSS file
+import '../styles/MapPoint.css'; // Import CSS file
 
 /**
  * This interface is to store the position of the marker

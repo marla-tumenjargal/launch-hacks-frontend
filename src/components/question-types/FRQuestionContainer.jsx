@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../css/FRQuestionContainer.css";
+import "../styles/FRQuestionContainer.css";
 
 export default function FRQuestionContainer(props) {
 
@@ -8,7 +8,7 @@ export default function FRQuestionContainer(props) {
     <div className="frq-container">
       <div className="frq-container-component">{props.question}</div>
       <div className="frq-container-component ">
-      {(props.solved || props.ended) && <div className={props.ended && props.solved ? "frq-correct" : (!props.solved ? "frq-incorrect" : "")}>{props.answer}</div>}
+        {(props.solved || props.ended) && <div className={props.ended && props.solved ? "frq-correct" : (!props.solved ? "frq-incorrect" : "")}>{props.answer}</div>}
       </div>
     </div>
   );

@@ -1,13 +1,13 @@
 import React from 'react';
-import '../css/style.css';
+import '../styles/style.css';
 
 const TopBar = () => {
 
-return (
+  return (
     <div className="top-bar-container">
       <div className="normal-text"> 🎉 Top Bar Sample Text 🎉 </div>
       <div className="bar-text">
-        
+
       </div>
     </div>
   );
