@@ -74,7 +74,7 @@ export default function FRQuestion(props) {
             <div className="frq-input-container">
               <input className="frq-input" onChange={(e) => setValue(e.target.value)} value={value} />
               <div>
-                {correctAnswers}/{questionArray.length}
+                {correctAnswers}/{questionArray.length} Answered
               </div>
             </div>
             <button className="frq-giveup-button" onClick={endGame}>Give Up?</button>
@@ -82,7 +82,7 @@ export default function FRQuestion(props) {
         )}
         {hasEnded && (
           <div className="frq-top-container">
-            You got {correctAnswers} / {questionArray.length}
+            You got {correctAnswers} / {questionArray.length} correct
             <button onClick={nextHandler} className="frq-next-button">Next</button>
           </div>
         )}

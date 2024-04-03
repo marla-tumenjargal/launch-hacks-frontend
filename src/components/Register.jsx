@@ -4,7 +4,6 @@ import "./styles/Register.css"
 function Register() {
     const [formData, setFormData] = useState({
       username: '',
-      email: '',
       password: '',
       confirmPassword: '',
     });
@@ -15,8 +14,9 @@ function Register() {
   
     const handleSubmit = (event) => {
       event.preventDefault();
-      // Handle form submission logic here (e.g., send data to server)
-      console.log('Form submitted:', formData);
+      //btw there is no error handling so in the demonstration dont mess it up
+      fetch("http://localhost:8080/v1/trivia/addUser/" + formData.username + "&" + formData.password + "&9")
+      .then(data => console.log(data));
     };
   
     return (
@@ -32,19 +32,6 @@ function Register() {
               name="username"
               id="username"
               value={formData.username}
-              onChange={handleChange}
-              className="register-user-input"
-            />
-          </div>
-          <div className="form-group" >
-            <label htmlFor="email" className="register-field-label" >
-              Email:
-            </label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              value={formData.email}
               onChange={handleChange}
               className="register-user-input"
             />

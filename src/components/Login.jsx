@@ -13,8 +13,8 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle form submission logic here (e.g., send data to server)
-    console.log('Form submitted:', formData);
+    fetch("http://localhost:8080/v1/trivia/getUser/" + formData.username + "&" + formData.password + "&9")
+    .then(data => console.log(data));
   };
 
   return (
