@@ -1,16 +1,41 @@
 .questions-container {
-    width: 20vw;
+    width: 30vw;
 }
 
 .frq-top-container {
     display: flex;
     justify-content: space-between;
-    width: 20vw;
+    width: 30vw;
+    margin-bottom: 2vh;
 }
 
 .frq-giveup-button {
+    margin-left: 2vw;
+    background-color: red;
+    color: white;
+    border-radius: 50px;
+    width: 6vw;
+}
+
+.frq-input {
+    border: 1px black solid;
+}
+
+.frq {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.frq-input-container {
+    max-width: 10vw;
+}
+
+.frq-next-button {
+    margin-left: 2vw;
     background-color: #571FE5;
     color: white;
     border-radius: 50px;
-    width: 8vw;
+    width: 6vw;
 }

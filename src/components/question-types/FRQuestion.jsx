@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import FRQuestionContainer from "./FRQuestionContainer";
 import { Connector } from "../Map-Utilities/Connector";
+import "../styles/FRQuestion.css";
 
 export default function FRQuestion(props) {
   const [value, setValue] = useState(""); //user input
@@ -8,9 +9,7 @@ export default function FRQuestion(props) {
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [hasEnded, setHasEnded] = useState();
 
-
   useEffect(() => {
-
     for (let i = 0; i < questionArray.length; i++) {
       console.log(questionArray[i].answer);
     }
@@ -35,7 +34,6 @@ export default function FRQuestion(props) {
     }
   });
 
-
   function endGame() {
     setHasEnded(true);
   }
@@ -54,7 +52,11 @@ export default function FRQuestion(props) {
 
     for (let i = 0; i < data.length; i++) {
       console.log(data[i].correct);
-      const question = { question: data[i].question, answer: data[i].correct, solved: false };
+      const question = {
+        question: data[i].question,
+        answer: data[i].correct,
+        solved: false,
+      };
       questionHolder.push(question);
     }
 
@@ -62,26 +64,26 @@ export default function FRQuestion(props) {
     setQuestionArray(questionHolder);
     setCorrectAnswers(0);
     setHasEnded(false);
-  }
+  };
 
   return (
-    <>
+    <div className="frq">
       <div>
         {!hasEnded && (
-          <div>
-            <input onChange={(e) => setValue(e.target.value)} value={value} />
-            <div>
-              {correctAnswers}/{questionArray.length}
+          <div className="frq-top-container">
+            <div className="frq-input-container">
+              <input className="frq-input" onChange={(e) => setValue(e.target.value)} value={value} />
+              <div>
+                {correctAnswers}/{questionArray.length}
+              </div>
             </div>
-            <button onClick={endGame}>Give Up?</button>
+            <button className="frq-giveup-button" onClick={endGame}>Give Up?</button>
           </div>
         )}
         {hasEnded && (
-          <div>
+          <div className="frq-top-container">
             You got {correctAnswers} / {questionArray.length}
-            <button onClick={nextHandler}>
-              Next
-            </button>
+            <button onClick={nextHandler} className="frq-next-button">Next</button>
           </div>
         )}
       </div>
@@ -97,6 +99,6 @@ export default function FRQuestion(props) {
           </div>
         );
       })}
-    </>
+    </div>
   );
 }
