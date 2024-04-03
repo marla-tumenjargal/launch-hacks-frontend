@@ -19,7 +19,6 @@ const Navbar = () => {
           <NavLink to="/" label="Dashboard" />
           <NavLink to="/resources" label="Resources" />
           <NavLink to="/contact" label="Trivia" />
-          <NavLink to="/about" label="About" />
           <NavLink to="/maps" label="Maps" />
         </ul>
         <button
